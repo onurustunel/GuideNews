@@ -1,0 +1,16 @@
+PODS:
+  - ZKCarousel (1.1.0)
+
+DEPENDENCIES:
+  - ZKCarousel
+
+SPEC REPOS:
+  trunk:
+    - ZKCarousel
+
+SPEC CHECKSUMS:
+  ZKCarousel: 935e0aa9beed83824588d9a82d8bafa5b6fc19db
+
+PODFILE CHECKSUM: 1b634e37f22ce895e687859d8a410350c35793fd
+
+COCOAPODS: 1.10.0

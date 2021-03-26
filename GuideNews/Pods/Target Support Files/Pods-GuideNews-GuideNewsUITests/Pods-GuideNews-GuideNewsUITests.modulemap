@@ -1,0 +1,6 @@
+framework module Pods_GuideNews_GuideNewsUITests {
+  umbrella header "Pods-GuideNews-GuideNewsUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

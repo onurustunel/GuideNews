@@ -1,0 +1,6 @@
+framework module Pods_GuideNews {
+  umbrella header "Pods-GuideNews-umbrella.h"
+
+  export *
+  module * { export * }
+}
