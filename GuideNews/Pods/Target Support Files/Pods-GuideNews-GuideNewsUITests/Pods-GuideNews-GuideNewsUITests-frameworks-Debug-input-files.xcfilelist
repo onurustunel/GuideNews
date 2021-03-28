@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-GuideNews-GuideNewsUITests/Pods-GuideNews-GuideNewsUITests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/VBRRollingPit/VBRRollingPit.framework
 ${BUILT_PRODUCTS_DIR}/ZKCarousel/ZKCarousel.framework

@@ -12,6 +12,7 @@ class InterestVC: UIViewController{
     @IBOutlet weak var interestCollectionView: UICollectionView!
     var interestData = InterestDataSet().interestData
     var interestArray = [String]()
+    var savingData = UserDefaults.standard
     
     
     override func viewDidLoad() {
@@ -22,25 +23,39 @@ class InterestVC: UIViewController{
         
     }
     
+    
+    
+    
     func interestCollectionViewLayout() {
-        let tasarim :UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        let genislik = self.interestCollectionView.frame.size.width
-        tasarim.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        let hucreGenislik = (genislik-30)/2
-        tasarim.itemSize = CGSize(width: hucreGenislik, height: hucreGenislik)
-        tasarim.minimumInteritemSpacing = 10
-        tasarim.minimumLineSpacing = 10
-        interestCollectionView.collectionViewLayout = tasarim        
+        let design :UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        let width = self.interestCollectionView.frame.size.width
+        design.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        let cellWidth = (width-30)/2
+        design.itemSize = CGSize(width: cellWidth, height: cellWidth)
+        design.minimumInteritemSpacing = 10
+        design.minimumLineSpacing = 10
+        interestCollectionView.collectionViewLayout = design
     }
+    
+    
+    func saveData() {
+        savingData.set(interestArray, forKey: "savedInterests")
+    }
+       
 }
 
 extension InterestVC: UICollectionViewDelegate, UICollectionViewDataSource,  AddInterestCollectionViewCellProtocol, UICollectionViewDelegateFlowLayout, SaveInterestCollectionViewCellProtocol {
     
     
     func saveYourInterest() {
-        print(interestArray)
+        saveData()
+        
+        if interestArray.count > 0 {
+            let storyboard: UIStoryboard = UIStoryboard(name: "Feed", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "Feed") as! FeedTabBarController
+            self.show(vc, sender: self)
+        }
     }
-    
     
     func addYourInterest(indexPath: IndexPath) {
         var data = interestData[indexPath.row].name
