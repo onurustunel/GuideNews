@@ -10,9 +10,7 @@ import UIKit
 class CategoryResultTVC: UITableViewCell {
     
     @IBOutlet weak var categoryResultimage: UIImageView!
-    
-    @IBOutlet weak var categoryResultTitle: UILabel!
-    
+    @IBOutlet weak var categoryResultTitle: UILabel!    
     @IBOutlet weak var categoryResultSource: UILabel!
     
     

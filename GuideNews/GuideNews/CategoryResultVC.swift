@@ -16,7 +16,6 @@ class CategoryResultVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         categoryResultTableView.backgroundColor = .clear
-
         searchbar()
         // Do any additional setup after loading the view.
     }

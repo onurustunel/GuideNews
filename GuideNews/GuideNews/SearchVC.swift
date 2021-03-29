@@ -10,35 +10,58 @@ import UIKit
 class SearchVC: UIViewController {
 
     @IBOutlet weak var searchTableView: UITableView!
+    var newsList : [BreakingNews]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         searchTableView.backgroundColor = .clear
         searchbar()
+        newsList = getPopularNewsResponse.getPopularNews()
 
         // Do any additional setup after loading the view.
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let index = sender as? Int
+        if segue.identifier == "fromSearchtoDetail" {
+            
+            let destinationVC = segue.destination as!  NewsDetailsVC
+            destinationVC.breakingNews = newsList![index!]
+        }
+    }
+    
    
-  
-
+    
 }
 
 extension SearchVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        if tableView == searchTableView {
+            return 20            
+        } else {
+            return 0
+            
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell", for: indexPath) as! SearchTVC
-        cell.searchCellimage.image = UIImage(named: "popular")
-        cell.searchCellTitle.text = "asdada as dada a da da da adasa da adadad asd ad ada da ada ad adasad ad ad asdasdadsadsa ada a da da ad"
-        cell.searchCellSource.text = "Source: newyorktimes.com"
+        
+        let news = newsList![indexPath.row]
+        cell.cellEdit(newsList: news)        
         cell.backgroundColor = .clear
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 144
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "fromSearchtoDetail", sender: indexPath.row)
     }
     
 }

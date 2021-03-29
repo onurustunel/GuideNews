@@ -244,7 +244,7 @@ extension CGFloat {
     }
     private func createPathMoveAnimation(toVal : CGPath) -> CABasicAnimation{
         let animation = CABasicAnimation(keyPath: "path")
-        animation.duration = 1
+        animation.duration = 0.3
 //        animation.beginTime = CACurrentMediaTime() + 2
         animation.toValue = toVal
         animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)

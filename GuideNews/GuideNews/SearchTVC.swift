@@ -11,8 +11,7 @@ class SearchTVC: UITableViewCell {
     
     
     @IBOutlet weak var searchCellimage: UIImageView!
-    @IBOutlet weak var searchCellTitle: UILabel!
-    
+    @IBOutlet weak var searchCellTitle: UILabel!    
     @IBOutlet weak var searchCellSource: UILabel!
     
     override func awakeFromNib() {
@@ -24,6 +23,26 @@ class SearchTVC: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    
+    func cellEdit(newsList : BreakingNews) {
+        searchCellTitle.text = newsList.title
+        searchCellSource.text = newsList.publishedAt
+        
+        if let url = URL(string: "\(newsList.urlToImage ?? "")"){
+            DispatchQueue.global().async {
+                let data = try? Data(contentsOf: url)
+                
+                DispatchQueue.main.async {
+                    if let image = UIImage(data: data ?? Data()) {
+                        self.searchCellimage.image = image
+                    }
+                }
+                
+                
+            }
+        }
     }
 
 }

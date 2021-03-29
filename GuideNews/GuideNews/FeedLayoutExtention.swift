@@ -43,9 +43,7 @@ extension FeedVC {
             layout.invalidateLayout()
         }
         
-        
     }
-    
     
     func detailCollectionView() {
         

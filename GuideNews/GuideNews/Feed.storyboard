@@ -51,28 +51,28 @@
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
                                                                 </imageView>
+                                                                <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5bm-ei-cId" customClass="BackgroundGradientView" customModule="GuideNews" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="321" height="353"/>
+                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bir iki iasdad asdad ada da asdadsaddasdad asda adad ad ada dasdadadadadas" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CIa-kU-wZT">
-                                                                    <rect key="frame" x="12" y="272.5" width="297" height="56.5"/>
+                                                                    <rect key="frame" x="12" y="280.5" width="297" height="56.5"/>
                                                                     <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="17"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5bm-ei-cId" customClass="BackgroundGradientView" customModule="GuideNews" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="321" height="353"/>
-                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                </view>
                                                             </subviews>
                                                             <constraints>
+                                                                <constraint firstItem="CIa-kU-wZT" firstAttribute="leading" secondItem="3Q1-e4-S6J" secondAttribute="leading" constant="12" id="1Cq-bi-JXk"/>
                                                                 <constraint firstAttribute="trailing" secondItem="uVJ-Wt-Sf9" secondAttribute="trailing" id="2TH-0C-A9e"/>
                                                                 <constraint firstAttribute="trailing" secondItem="5bm-ei-cId" secondAttribute="trailing" id="4J1-Eb-HFl"/>
-                                                                <constraint firstAttribute="trailing" secondItem="CIa-kU-wZT" secondAttribute="trailing" constant="12" id="7x1-tX-qkH"/>
-                                                                <constraint firstItem="CIa-kU-wZT" firstAttribute="leading" secondItem="3Q1-e4-S6J" secondAttribute="leading" constant="12" id="8Yy-m6-otR"/>
                                                                 <constraint firstItem="uVJ-Wt-Sf9" firstAttribute="top" secondItem="3Q1-e4-S6J" secondAttribute="top" id="9t7-1N-66K"/>
-                                                                <constraint firstAttribute="bottom" secondItem="CIa-kU-wZT" secondAttribute="bottom" constant="24" id="G0H-kz-3WD"/>
                                                                 <constraint firstItem="5bm-ei-cId" firstAttribute="leading" secondItem="3Q1-e4-S6J" secondAttribute="leading" id="IL2-qf-K0P"/>
+                                                                <constraint firstAttribute="bottom" secondItem="CIa-kU-wZT" secondAttribute="bottom" constant="16" id="cQe-TN-l75"/>
                                                                 <constraint firstItem="5bm-ei-cId" firstAttribute="top" secondItem="3Q1-e4-S6J" secondAttribute="top" id="d1i-H6-V0S"/>
                                                                 <constraint firstItem="uVJ-Wt-Sf9" firstAttribute="leading" secondItem="3Q1-e4-S6J" secondAttribute="leading" id="dsk-KL-rMi"/>
                                                                 <constraint firstAttribute="bottom" secondItem="5bm-ei-cId" secondAttribute="bottom" id="dxU-4l-3ju"/>
+                                                                <constraint firstAttribute="trailing" secondItem="CIa-kU-wZT" secondAttribute="trailing" constant="12" id="pab-WV-biw"/>
                                                                 <constraint firstAttribute="bottom" secondItem="uVJ-Wt-Sf9" secondAttribute="bottom" id="xbU-tn-O4w"/>
                                                             </constraints>
                                                         </collectionViewCellContentView>
@@ -122,28 +122,28 @@
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
                                                                 </imageView>
+                                                                <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pb5-yi-guT" customClass="BackgroundGradientView" customModule="GuideNews" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="331" height="300"/>
+                                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="guf-0b-ife">
-                                                                    <rect key="frame" x="12" y="125" width="307" height="151"/>
-                                                                    <string key="text">adasdas asd ad ad ad asd adad asdas dasdadad das da  dasadada adasdas asd ad ad ad asd adad asdas dasdadad das da  dasadada adasdas asd ad ad ad asd adad asdas dasdadad das da  dasadada adasdas asd ad ad ad asd adad asdas dasdadad das da  dasadada adasdas asd ad ad ad asd adad asdas dasdadad das da  dasadada </string>
+                                                                    <rect key="frame" x="12" y="189.5" width="307" height="94.5"/>
+                                                                    <string key="text">adasdas asd ad ad ad asd adad asdas dasdadad das da  dasadada adasdas asd ad ad ad asd adad asdas dasdadad das da  dasadada adasdas asd ad ad ad asd adad asdas dasdadad das da  dasadada adasdas asd ad a</string>
                                                                     <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="17"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pb5-yi-guT" customClass="BackgroundGradientView" customModule="GuideNews" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="331" height="300"/>
-                                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                </view>
                                                             </subviews>
                                                             <constraints>
-                                                                <constraint firstItem="guf-0b-ife" firstAttribute="leading" secondItem="rJf-pS-yO5" secondAttribute="leading" constant="12" id="2MZ-ti-hLs"/>
                                                                 <constraint firstItem="Pb5-yi-guT" firstAttribute="top" secondItem="rJf-pS-yO5" secondAttribute="top" id="68Y-9B-Wz9"/>
                                                                 <constraint firstAttribute="trailing" secondItem="qqg-eF-GU0" secondAttribute="trailing" id="D9l-k0-PoE"/>
                                                                 <constraint firstAttribute="bottom" secondItem="Pb5-yi-guT" secondAttribute="bottom" id="Fki-KA-K0l"/>
-                                                                <constraint firstAttribute="bottom" secondItem="guf-0b-ife" secondAttribute="bottom" constant="24" id="MRQ-5h-lYn"/>
                                                                 <constraint firstItem="qqg-eF-GU0" firstAttribute="leading" secondItem="rJf-pS-yO5" secondAttribute="leading" id="bxs-3i-pGI"/>
-                                                                <constraint firstAttribute="trailing" secondItem="guf-0b-ife" secondAttribute="trailing" constant="12" id="cRf-qj-kCT"/>
                                                                 <constraint firstAttribute="trailing" secondItem="Pb5-yi-guT" secondAttribute="trailing" id="eyH-fs-npX"/>
+                                                                <constraint firstItem="guf-0b-ife" firstAttribute="leading" secondItem="rJf-pS-yO5" secondAttribute="leading" constant="12" id="j9m-TI-O0m"/>
+                                                                <constraint firstAttribute="trailing" secondItem="guf-0b-ife" secondAttribute="trailing" constant="12" id="jQP-e0-dvx"/>
                                                                 <constraint firstItem="Pb5-yi-guT" firstAttribute="leading" secondItem="rJf-pS-yO5" secondAttribute="leading" id="lM8-em-MGe"/>
+                                                                <constraint firstAttribute="bottom" secondItem="guf-0b-ife" secondAttribute="bottom" constant="16" id="tJG-An-HHM"/>
                                                                 <constraint firstItem="qqg-eF-GU0" firstAttribute="top" secondItem="rJf-pS-yO5" secondAttribute="top" id="vwi-dN-Kth"/>
                                                                 <constraint firstAttribute="bottom" secondItem="qqg-eF-GU0" secondAttribute="bottom" id="wY1-wd-8jA"/>
                                                             </constraints>
@@ -188,29 +188,29 @@
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
                                                                 </imageView>
+                                                                <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GlX-tG-0r7" customClass="BackgroundGradientView" customModule="GuideNews" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="295" height="253"/>
+                                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adasd ads ads adadad  adas da da dasass dasda ad adad d ad a adasad aasdasdasdada." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KJ2-Cm-zjX">
-                                                                    <rect key="frame" x="12" y="172.5" width="271" height="56.5"/>
+                                                                    <rect key="frame" x="12" y="180.5" width="271" height="56.5"/>
                                                                     <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="17"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GlX-tG-0r7" customClass="BackgroundGradientView" customModule="GuideNews" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="295" height="253"/>
-                                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                </view>
                                                             </subviews>
                                                             <constraints>
                                                                 <constraint firstItem="UoN-uD-kKW" firstAttribute="top" secondItem="W7h-t1-7aD" secondAttribute="top" id="5Mn-IX-4cQ"/>
                                                                 <constraint firstItem="UoN-uD-kKW" firstAttribute="leading" secondItem="W7h-t1-7aD" secondAttribute="leading" id="BKJ-oF-QAT"/>
+                                                                <constraint firstItem="KJ2-Cm-zjX" firstAttribute="leading" secondItem="W7h-t1-7aD" secondAttribute="leading" constant="12" id="Czv-Be-q5i"/>
                                                                 <constraint firstAttribute="trailing" secondItem="GlX-tG-0r7" secondAttribute="trailing" id="E0l-Yz-VbW"/>
                                                                 <constraint firstAttribute="bottom" secondItem="UoN-uD-kKW" secondAttribute="bottom" id="EaD-1N-Fee"/>
                                                                 <constraint firstItem="GlX-tG-0r7" firstAttribute="top" secondItem="W7h-t1-7aD" secondAttribute="top" id="Kya-Vx-Awp"/>
                                                                 <constraint firstAttribute="bottom" secondItem="GlX-tG-0r7" secondAttribute="bottom" id="NEM-Rc-rls"/>
-                                                                <constraint firstAttribute="bottom" secondItem="KJ2-Cm-zjX" secondAttribute="bottom" constant="24" id="UrU-4L-ADo"/>
-                                                                <constraint firstItem="KJ2-Cm-zjX" firstAttribute="leading" secondItem="W7h-t1-7aD" secondAttribute="leading" constant="12" id="k9e-tl-5dX"/>
+                                                                <constraint firstAttribute="bottom" secondItem="KJ2-Cm-zjX" secondAttribute="bottom" constant="16" id="bEK-zy-D8M"/>
                                                                 <constraint firstItem="GlX-tG-0r7" firstAttribute="leading" secondItem="W7h-t1-7aD" secondAttribute="leading" id="mBZ-Mi-Usy"/>
+                                                                <constraint firstAttribute="trailing" secondItem="KJ2-Cm-zjX" secondAttribute="trailing" constant="12" id="oMQ-df-QDh"/>
                                                                 <constraint firstAttribute="trailing" secondItem="UoN-uD-kKW" secondAttribute="trailing" id="pUE-Rp-b7W"/>
-                                                                <constraint firstAttribute="trailing" secondItem="KJ2-Cm-zjX" secondAttribute="trailing" constant="12" id="vT1-UN-TrJ"/>
                                                             </constraints>
                                                         </collectionViewCellContentView>
                                                         <size key="customSize" width="295" height="253"/>
@@ -277,6 +277,7 @@
                         <outlet property="interestCollectionView" destination="A3e-r2-ojT" id="Png-Qu-PuJ"/>
                         <outlet property="popularCollectionView" destination="I15-Tt-4Dr" id="YWb-Vc-Fvz"/>
                         <outlet property="yesterdayCollectionView" destination="CSw-Gc-UBH" id="LLd-wj-dfc"/>
+                        <segue destination="Teb-bD-Yo4" kind="show" identifier="fromFeedtoDetail" id="LvJ-M5-aA6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cLS-sF-6nM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -302,7 +303,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="159"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beauty" translatesAutoresizingMaskIntoConstraints="NO" id="faj-fp-Gby">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beauty" translatesAutoresizingMaskIntoConstraints="NO" id="faj-fp-Gby">
                                                     <rect key="frame" x="32" y="23" width="120" height="120"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="120" id="pvs-bo-6f0"/>
@@ -366,6 +367,7 @@
                     <navigationItem key="navigationItem" title="Search" largeTitleDisplayMode="always" id="2Kx-mS-tfm"/>
                     <connections>
                         <outlet property="searchTableView" destination="8VG-e0-zJI" id="6Fy-pp-Nl6"/>
+                        <segue destination="Teb-bD-Yo4" kind="show" identifier="fromSearchtoDetail" id="mDa-KG-gkS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LDo-C7-MPJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -421,6 +423,13 @@
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="24"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="36"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -440,6 +449,13 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="KM5-kV-8PM">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="24"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="36"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -555,6 +571,12 @@
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="24"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="36"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -564,6 +586,92 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t4g-jd-YeK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1502.8985507246377" y="1282.3660714285713"/>
+        </scene>
+        <!--News DetailsVC-->
+        <scene sceneID="qiN-GE-1O4">
+            <objects>
+                <viewController id="Teb-bD-Yo4" customClass="NewsDetailsVC" customModule="GuideNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UCq-Qs-bln" customClass="BackgroundGradientView" customModule="GuideNews" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Obama Foundation drawn high dollar: International donations" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rwP-Fa-c3E">
+                                <rect key="frame" x="20" y="120" width="374" height="93.5"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="28/03/2021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJu-LC-cIQ">
+                                <rect key="frame" x="20" y="221.5" width="294" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cinema" translatesAutoresizingMaskIntoConstraints="NO" id="3zC-8R-V7P">
+                                <rect key="frame" x="0.0" y="256" width="414" height="280"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="280" id="rVB-Za-Yjt"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0FY-nf-xll">
+                                <rect key="frame" x="20" y="556" width="374" height="237"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3iq-Rx-E4M">
+                                <rect key="frame" x="318" y="518" width="72" height="36"/>
+                                <color key="backgroundColor" red="0.60784313729999995" green="0.062745098040000002" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="72" id="GVp-ng-Ao9"/>
+                                    <constraint firstAttribute="height" constant="36" id="K1d-MS-rpy"/>
+                                </constraints>
+                                <state key="normal" title="Details">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
+                                        <integer key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="detailsClicked:" destination="Teb-bD-Yo4" eventType="touchUpInside" id="Hw7-YG-8RP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="5SQ-KW-N03"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3iq-Rx-E4M" firstAttribute="centerY" secondItem="3zC-8R-V7P" secondAttribute="centerY" constant="140" id="2HI-I5-3tq"/>
+                            <constraint firstItem="0FY-nf-xll" firstAttribute="top" secondItem="3zC-8R-V7P" secondAttribute="bottom" constant="20" id="7Jc-8i-9TV"/>
+                            <constraint firstItem="3zC-8R-V7P" firstAttribute="leading" secondItem="UCq-Qs-bln" secondAttribute="leading" id="9eu-st-O7h"/>
+                            <constraint firstItem="0FY-nf-xll" firstAttribute="leading" secondItem="5SQ-KW-N03" secondAttribute="leading" constant="20" id="Dbb-cV-pu1"/>
+                            <constraint firstItem="rwP-Fa-c3E" firstAttribute="top" secondItem="5SQ-KW-N03" secondAttribute="top" constant="32" id="Rzi-Uy-wLw"/>
+                            <constraint firstItem="5SQ-KW-N03" firstAttribute="trailing" secondItem="0FY-nf-xll" secondAttribute="trailing" constant="20" id="SI8-u1-ZK8"/>
+                            <constraint firstItem="5SQ-KW-N03" firstAttribute="bottom" secondItem="0FY-nf-xll" secondAttribute="bottom" constant="20" id="cRY-mz-lMa"/>
+                            <constraint firstItem="5SQ-KW-N03" firstAttribute="trailing" secondItem="rwP-Fa-c3E" secondAttribute="trailing" constant="20" id="fFi-ZK-yYu"/>
+                            <constraint firstItem="DJu-LC-cIQ" firstAttribute="leading" secondItem="5SQ-KW-N03" secondAttribute="leading" constant="20" id="i50-Mw-L1g"/>
+                            <constraint firstItem="DJu-LC-cIQ" firstAttribute="top" secondItem="rwP-Fa-c3E" secondAttribute="bottom" constant="8" id="jVA-3F-Red"/>
+                            <constraint firstAttribute="trailing" secondItem="3zC-8R-V7P" secondAttribute="trailing" id="mn8-Rl-sTU"/>
+                            <constraint firstItem="5SQ-KW-N03" firstAttribute="trailing" secondItem="DJu-LC-cIQ" secondAttribute="trailing" constant="100" id="vxR-HD-sPG"/>
+                            <constraint firstItem="rwP-Fa-c3E" firstAttribute="leading" secondItem="5SQ-KW-N03" secondAttribute="leading" constant="20" id="xas-jx-1a5"/>
+                            <constraint firstItem="3zC-8R-V7P" firstAttribute="top" secondItem="DJu-LC-cIQ" secondAttribute="bottom" constant="15" id="xhT-h0-Mgb"/>
+                            <constraint firstItem="5SQ-KW-N03" firstAttribute="trailing" secondItem="3iq-Rx-E4M" secondAttribute="trailing" constant="24" id="zPv-d9-yWf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="j8R-uw-raM"/>
+                    <connections>
+                        <outlet property="newsDateLabel" destination="DJu-LC-cIQ" id="rbr-gR-MFM"/>
+                        <outlet property="newsDetailText" destination="0FY-nf-xll" id="JXa-dq-Jqz"/>
+                        <outlet property="newsImage" destination="3zC-8R-V7P" id="LNU-og-g76"/>
+                        <outlet property="newsTitleLabel" destination="rwP-Fa-c3E" id="5Db-Ef-BUo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i6w-Uw-kep" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3253.6231884057975" y="568.52678571428567"/>
         </scene>
         <!--Art-->
         <scene sceneID="Hpw-Sa-ucU">
@@ -660,6 +768,9 @@
             <size key="intrinsicContentSize" width="-1" height="83"/>
         </designable>
     </designables>
+    <inferredMetricsTieBreakers>
+        <segue reference="mDa-KG-gkS"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="beauty" width="640" height="640"/>
         <image name="category" width="32" height="32"/>

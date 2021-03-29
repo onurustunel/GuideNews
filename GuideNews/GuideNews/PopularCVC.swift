@@ -14,4 +14,21 @@ class PopularCVC: UICollectionViewCell {
     @IBOutlet weak var popularCellTitle: UILabel!
     
     
+    func cellEdit(newsList : BreakingNews) {
+        popularCellTitle.text = newsList.title
+        
+        if let url = URL(string: "\(newsList.urlToImage ?? "")"){
+            DispatchQueue.global().async {
+                let data = try? Data(contentsOf: url)
+                
+                DispatchQueue.main.async {
+                    if let image = UIImage(data: data ?? Data()) {
+                        self.popularCellimage.image = image
+                    }
+                }                
+            }
+        }
+    }
+    
+    
 }
