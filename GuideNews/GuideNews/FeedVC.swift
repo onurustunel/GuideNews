@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class FeedVC: UIViewController {
     
     
@@ -15,6 +16,7 @@ class FeedVC: UIViewController {
     @IBOutlet weak var interestCollectionView: UICollectionView!
     
     @IBOutlet weak var yesterdayCollectionView: UICollectionView!
+    var newsList : [BreakingNews]?
     
     
     override func viewDidLoad() {
@@ -25,6 +27,7 @@ class FeedVC: UIViewController {
         yesterdayCollectionView.backgroundColor = .clear
         detailCollectionView()
         yesterdayCollectionview()
+        newsList = getPopularNewsResponse.getPopularNews()
         
         // Do any additional setup after loading the view.
     }
@@ -37,7 +40,7 @@ extension FeedVC : UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if collectionView == popularCollectionView {
-            return 10
+            return newsList!.count
         } else if collectionView == interestCollectionView {
             return 20
         } else {
@@ -51,8 +54,9 @@ extension FeedVC : UICollectionViewDelegate, UICollectionViewDataSource {
         if collectionView == popularCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "popularCell", for: indexPath) as! PopularCVC
             cell.backgroundColor = .clear
+            var news = newsList![indexPath.row]
             cell.popularCellimage.image = UIImage(named: "music")
-            cell.popularCellTitle.text = "bir iki iasdad asdad ada da asdadsaddasdad asda adad ad ada dasdadadadadas"
+            cell.popularCellTitle.text = news.title
             return cell
         } else if collectionView == interestCollectionView {
             

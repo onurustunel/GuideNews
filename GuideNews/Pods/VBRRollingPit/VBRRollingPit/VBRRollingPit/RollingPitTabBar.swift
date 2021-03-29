@@ -176,7 +176,7 @@ extension CGFloat {
     
     private lazy var backgroundMask : CAShapeLayer = {
         let result = CAShapeLayer()
-        result.fillRule = CAShapeLayerFillRule.evenOdd
+        result.fillRule = kCAFillRuleEvenOdd
         return result
     }()
 
@@ -235,7 +235,7 @@ extension CGFloat {
         itemView.isHidden = false
 
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(400) , execute: {
-            UIView.animate(withDuration: 0.3) {
+            UIView.animate(withDuration: 0.4) {
                 itemView.alpha = 1
             }
         })
@@ -244,13 +244,13 @@ extension CGFloat {
     }
     private func createPathMoveAnimation(toVal : CGPath) -> CABasicAnimation{
         let animation = CABasicAnimation(keyPath: "path")
-        animation.duration = 0.5
+        animation.duration = 1
 //        animation.beginTime = CACurrentMediaTime() + 2
         animation.toValue = toVal
-        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         
         animation.isRemovedOnCompletion = false
-        animation.fillMode = CAMediaTimingFillMode.forwards
+        animation.fillMode = kCAFillModeForwards
         return animation
     }
     
