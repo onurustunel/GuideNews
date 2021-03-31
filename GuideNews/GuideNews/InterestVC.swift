@@ -10,7 +10,7 @@ import UIKit
 class InterestVC: UIViewController{
     
     @IBOutlet weak var interestCollectionView: UICollectionView!
-    var interestData = InterestDataSet().interestData
+    var interestData = InterestDataSet().categoriesData
     var interestArray = [String]()
     var savingData = UserDefaults.standard
     

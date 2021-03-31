@@ -17,15 +17,27 @@ class FeedVC: UIViewController {
     
     @IBOutlet weak var yesterdayCollectionView: UICollectionView!
     var newsList : [BreakingNews]?
+    var searchedList : [BreakingNews]?
+    var yesterdayList : [BreakingNews]?
+    var savedDataControl = UserDefaults.standard
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Times New Roman", size: 20)!]
-        
+        if let savedInterest = savedDataControl.array(forKey: "savedInterests") as? [String]  {
+            
+            searchedList = GetSearchedNews.getSearchedNews(searchedText: "\(savedInterest[1])")
+            print("data \(savedInterest[0]) hakkında yazıların getirilmesi gerekiyor...")
+            
+        }
         backgroundCleaner()
         CollectionViewsLayout()        
         newsList = getPopularNewsResponse.getPopularNews()
+//        searchedList = GetSearchedNews.getSearchedNews(searchedText: "apple")
+        yesterdayList = GetYesterdayNews.getYesterdayNews()
+//      GetSearchedNews.getSearchedNews(searchedText: "tesla")
+        
+        
         
         // Do any additional setup after loading the view.
     }
@@ -41,17 +53,26 @@ class FeedVC: UIViewController {
         detailCollectionView()
         yesterdayCollectionview()
     }
+    // fromYesterdayFeedtoDetail
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // code
         let index = sender as? Int
-        
-        if segue.identifier == "fromFeedtoDetail" {
+               
+        if segue.identifier == "fromPopularFeedtoDetail" {
             
             let destinationVC = segue.destination as!  NewsDetailsVC
             destinationVC.breakingNews = newsList![index!]
-        } 
+        } else  if segue.identifier == "fromInterestFeedtoDetail" {
+            let destinationVC = segue.destination as!  NewsDetailsVC
+            destinationVC.breakingNews = searchedList![index!]
+        } else if segue.identifier == "fromYesterdayFeedtoDetail" {
+            let destinationVC = segue.destination as!  NewsDetailsVC
+            destinationVC.breakingNews = yesterdayList![index!]
+        }
+        // fromInterestFeedtoDetail
     }
+    
 }
 
 
@@ -80,7 +101,7 @@ extension FeedVC : UICollectionViewDelegate, UICollectionViewDataSource {
             
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "interestCell", for: indexPath) as! FeedInterestCVC
             cell.backgroundColor = .clear
-            var news = newsList![indexPath.row]
+            var news = searchedList![indexPath.row]
             cell.cellEdit(newsList: news)
             return cell
             
@@ -89,7 +110,7 @@ extension FeedVC : UICollectionViewDelegate, UICollectionViewDataSource {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "yesterdayCell", for: indexPath) as! YesterdayCVC
             cell.backgroundColor = .clear            
             
-            var news = newsList![indexPath.row]
+            var news = yesterdayList![indexPath.row]
             cell.cellEdit(newsList: news)
             return cell
             
@@ -102,8 +123,13 @@ extension FeedVC : UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == popularCollectionView {
-            performSegue(withIdentifier: "toDetailNewsVC", sender: indexPath.row)
+            performSegue(withIdentifier: "fromPopularFeedtoDetail", sender: indexPath.row)
             
+        } else  if collectionView == interestCollectionView {
+            performSegue(withIdentifier: "fromInterestFeedtoDetail", sender: indexPath.row)
+            
+        } else if collectionView == yesterdayCollectionView {
+            performSegue(withIdentifier: "fromYesterdayFeedtoDetail", sender: indexPath.row)
         }
     }
     

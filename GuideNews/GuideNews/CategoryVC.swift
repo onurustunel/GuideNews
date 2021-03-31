@@ -10,14 +10,26 @@ import UIKit
 class CategoryVC: UIViewController {
 
     @IBOutlet weak var categoryCollectionView: UICollectionView!
-    var categoryData = InterestDataSet().interestData
+    var categoryData = InterestDataSet().categoriesData
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         categoryCollectionView.backgroundColor = .clear
         categoryCollectionViewLayout()
+        print(categoryData[0].name)
         
         
         // Do any additional setup after loading the view.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let index = sender as? Int
+        if segue.identifier == "toCategoryResult" {
+            
+            let destinationVC = segue.destination as! CategoryResultVC
+            destinationVC.chosenCategory = categoryData[index!].name
+            
+        }
     }
     
     
@@ -52,7 +64,7 @@ extension CategoryVC: UICollectionViewDelegate, UICollectionViewDataSource, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "toCategoryResult", sender: nil)
+        performSegue(withIdentifier: "toCategoryResult", sender: indexPath.row)
     }
     
     

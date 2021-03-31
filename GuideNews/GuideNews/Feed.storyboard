@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Oyz-yo-hBX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -43,7 +44,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="321" height="353"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="music" translatesAutoresizingMaskIntoConstraints="NO" id="uVJ-Wt-Sf9">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uVJ-Wt-Sf9">
                                                                     <rect key="frame" x="0.0" y="0.0" width="321" height="353"/>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
@@ -114,7 +115,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="331" height="300"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popular" translatesAutoresizingMaskIntoConstraints="NO" id="qqg-eF-GU0">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qqg-eF-GU0">
                                                                     <rect key="frame" x="0.0" y="0.0" width="331" height="300"/>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
@@ -180,7 +181,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="295" height="253"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="economy" translatesAutoresizingMaskIntoConstraints="NO" id="UoN-uD-kKW">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UoN-uD-kKW">
                                                                     <rect key="frame" x="0.0" y="0.0" width="295" height="253"/>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
@@ -277,12 +278,14 @@
                         <outlet property="interestCollectionView" destination="A3e-r2-ojT" id="Png-Qu-PuJ"/>
                         <outlet property="popularCollectionView" destination="I15-Tt-4Dr" id="YWb-Vc-Fvz"/>
                         <outlet property="yesterdayCollectionView" destination="CSw-Gc-UBH" id="LLd-wj-dfc"/>
-                        <segue destination="Teb-bD-Yo4" kind="show" identifier="fromFeedtoDetail" id="LvJ-M5-aA6"/>
+                        <segue destination="Teb-bD-Yo4" kind="show" identifier="fromPopularFeedtoDetail" id="LvJ-M5-aA6"/>
+                        <segue destination="Teb-bD-Yo4" kind="show" identifier="fromInterestFeedtoDetail" id="zVd-hC-aSa"/>
+                        <segue destination="Teb-bD-Yo4" kind="show" identifier="fromYesterdayFeedtoDetail" id="Btl-HR-H20"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cLS-sF-6nM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1502.8985507246377" y="-132.58928571428572"/>
+            <point key="canvasLocation" x="1458" y="-167"/>
         </scene>
         <!--Search-->
         <scene sceneID="bfM-Bu-If9">
@@ -303,7 +306,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="159"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beauty" translatesAutoresizingMaskIntoConstraints="NO" id="faj-fp-Gby">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="faj-fp-Gby">
                                                     <rect key="frame" x="32" y="23" width="120" height="120"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="120" id="pvs-bo-6f0"/>
@@ -438,7 +441,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tvH-AV-oBx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="592.75362318840587" y="-132.58928571428572"/>
+            <point key="canvasLocation" x="593" y="-167"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Auf-j1-RSd">
@@ -602,31 +605,28 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="28/03/2021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJu-LC-cIQ">
-                                <rect key="frame" x="20" y="221.5" width="294" height="19.5"/>
+                                <rect key="frame" x="20" y="221.5" width="294" height="20"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cinema" translatesAutoresizingMaskIntoConstraints="NO" id="3zC-8R-V7P">
-                                <rect key="frame" x="0.0" y="256" width="414" height="280"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="280" id="rVB-Za-Yjt"/>
-                                </constraints>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3zC-8R-V7P">
+                                <rect key="frame" x="0.0" y="256.5" width="414" height="269"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0FY-nf-xll">
-                                <rect key="frame" x="20" y="556" width="374" height="237"/>
+                                <rect key="frame" x="20" y="545.5" width="374" height="247.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3iq-Rx-E4M">
-                                <rect key="frame" x="318" y="518" width="72" height="36"/>
+                                <rect key="frame" x="322" y="216.5" width="72" height="30"/>
                                 <color key="backgroundColor" red="0.60784313729999995" green="0.062745098040000002" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="72" id="GVp-ng-Ao9"/>
-                                    <constraint firstAttribute="height" constant="36" id="K1d-MS-rpy"/>
+                                    <constraint firstAttribute="height" constant="30" id="cRm-wa-vjE"/>
+                                    <constraint firstAttribute="width" constant="72" id="mu7-AL-UbP"/>
                                 </constraints>
                                 <state key="normal" title="Details">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -644,21 +644,23 @@
                         <viewLayoutGuide key="safeArea" id="5SQ-KW-N03"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="3iq-Rx-E4M" firstAttribute="centerY" secondItem="3zC-8R-V7P" secondAttribute="centerY" constant="140" id="2HI-I5-3tq"/>
+                            <constraint firstItem="5SQ-KW-N03" firstAttribute="trailing" secondItem="3iq-Rx-E4M" secondAttribute="trailing" constant="20" id="6Zy-rH-O6V"/>
                             <constraint firstItem="0FY-nf-xll" firstAttribute="top" secondItem="3zC-8R-V7P" secondAttribute="bottom" constant="20" id="7Jc-8i-9TV"/>
                             <constraint firstItem="3zC-8R-V7P" firstAttribute="leading" secondItem="UCq-Qs-bln" secondAttribute="leading" id="9eu-st-O7h"/>
                             <constraint firstItem="0FY-nf-xll" firstAttribute="leading" secondItem="5SQ-KW-N03" secondAttribute="leading" constant="20" id="Dbb-cV-pu1"/>
                             <constraint firstItem="rwP-Fa-c3E" firstAttribute="top" secondItem="5SQ-KW-N03" secondAttribute="top" constant="32" id="Rzi-Uy-wLw"/>
                             <constraint firstItem="5SQ-KW-N03" firstAttribute="trailing" secondItem="0FY-nf-xll" secondAttribute="trailing" constant="20" id="SI8-u1-ZK8"/>
+                            <constraint firstItem="3iq-Rx-E4M" firstAttribute="top" secondItem="rwP-Fa-c3E" secondAttribute="bottom" constant="3" id="Vyo-G1-mUo"/>
+                            <constraint firstItem="3zC-8R-V7P" firstAttribute="height" secondItem="UCq-Qs-bln" secondAttribute="height" multiplier="0.3" id="bQM-QA-ed2"/>
                             <constraint firstItem="5SQ-KW-N03" firstAttribute="bottom" secondItem="0FY-nf-xll" secondAttribute="bottom" constant="20" id="cRY-mz-lMa"/>
                             <constraint firstItem="5SQ-KW-N03" firstAttribute="trailing" secondItem="rwP-Fa-c3E" secondAttribute="trailing" constant="20" id="fFi-ZK-yYu"/>
                             <constraint firstItem="DJu-LC-cIQ" firstAttribute="leading" secondItem="5SQ-KW-N03" secondAttribute="leading" constant="20" id="i50-Mw-L1g"/>
                             <constraint firstItem="DJu-LC-cIQ" firstAttribute="top" secondItem="rwP-Fa-c3E" secondAttribute="bottom" constant="8" id="jVA-3F-Red"/>
                             <constraint firstAttribute="trailing" secondItem="3zC-8R-V7P" secondAttribute="trailing" id="mn8-Rl-sTU"/>
                             <constraint firstItem="5SQ-KW-N03" firstAttribute="trailing" secondItem="DJu-LC-cIQ" secondAttribute="trailing" constant="100" id="vxR-HD-sPG"/>
+                            <constraint firstItem="3iq-Rx-E4M" firstAttribute="centerY" secondItem="DJu-LC-cIQ" secondAttribute="centerY" id="wuj-SW-IqE"/>
                             <constraint firstItem="rwP-Fa-c3E" firstAttribute="leading" secondItem="5SQ-KW-N03" secondAttribute="leading" constant="20" id="xas-jx-1a5"/>
                             <constraint firstItem="3zC-8R-V7P" firstAttribute="top" secondItem="DJu-LC-cIQ" secondAttribute="bottom" constant="15" id="xhT-h0-Mgb"/>
-                            <constraint firstItem="5SQ-KW-N03" firstAttribute="trailing" secondItem="3iq-Rx-E4M" secondAttribute="trailing" constant="24" id="zPv-d9-yWf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="j8R-uw-raM"/>
@@ -692,7 +694,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="159"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beauty" translatesAutoresizingMaskIntoConstraints="NO" id="RlZ-ng-oc7">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beauty" translatesAutoresizingMaskIntoConstraints="NO" id="RlZ-ng-oc7">
                                                     <rect key="frame" x="32" y="23" width="120" height="120"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="120" id="7zb-9R-avQ"/>
@@ -756,6 +758,7 @@
                     <navigationItem key="navigationItem" title="Art" largeTitleDisplayMode="always" id="gxd-Ca-FFT"/>
                     <connections>
                         <outlet property="categoryResultTableView" destination="aeN-di-j5E" id="6oE-Z2-uwm"/>
+                        <segue destination="Teb-bD-Yo4" kind="show" identifier="fromCategorytoDetail" id="nln-0C-Dm1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l5X-ay-7NM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -769,16 +772,13 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="mDa-KG-gkS"/>
+        <segue reference="LvJ-M5-aA6"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="beauty" width="640" height="640"/>
         <image name="category" width="32" height="32"/>
         <image name="cinema" width="433" height="433"/>
-        <image name="economy" width="427" height="427"/>
         <image name="home-filled" width="32" height="32"/>
-        <image name="music" width="427" height="427"/>
-        <image name="popular" width="427" height="427"/>
         <image name="search-filled" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

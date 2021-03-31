@@ -29,8 +29,13 @@ class NewsDetailsVC: UIViewController {
     func view() {
         if let news = breakingNews {
             newsTitleLabel.text = news.title
-            newsDateLabel.text = news.publishedAt
             newsDetailText.text = news.description
+            // Date Formating
+            let publishedDate : Date = news.publishedAt as? Date ?? Date()
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MMM/dd/yyyy"
+            newsDateLabel.text = dateFormatter.string(from: publishedDate)
+            
             
             if let url = URL(string: "\(news.urlToImage!)"){
                 DispatchQueue.global().async {
@@ -48,18 +53,12 @@ class NewsDetailsVC: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     @IBAction func detailsClicked(_ sender: Any) {
-        
-        // segue to Safari
+        if let link = breakingNews?.url {
+            if let url = URL(string : "\(link)") {
+                UIApplication.shared.open(url)
+            }
+        }
         
     }
     

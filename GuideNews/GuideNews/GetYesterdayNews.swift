@@ -1,21 +1,23 @@
 //
-//  GetPopularNews.swift
+//  GetYesterdayNews.swift
 //  GuideNews
 //
-//  Created by MacOS on 29.03.2021.
+//  Created by MacOS on 30.03.2021.
 //
 
 import Foundation
 
-class getPopularNewsResponse {
+class GetYesterdayNews {
     
-    static func getPopularNews() -> [BreakingNews] {
+    static func getYesterdayNews() -> [BreakingNews] {
+        var yesterday = Date.yesterday
+        let formattedYesterday = yesterday.getFormattedDate(format: "yyyy-MM-dd")
         
-        var newsList : [BreakingNews]?
+        var searchedNews : [BreakingNews]?
         
         var semaphore = DispatchSemaphore (value: 0)
         
-        var request = URLRequest(url: URL(string: "https://newsapi.org/v2/top-headlines?country=us&apiKey=\(Constant.SECONDAPIKEY)")!,timeoutInterval: Double.infinity)
+        var request = URLRequest(url: URL(string: "https://newsapi.org/v2/top-headlines?country=us&from=\(formattedYesterday)&sortBY=publishedAt&apiKey=\(Constant.SECONDAPIKEY)")!,timeoutInterval: Double.infinity)
         request.httpMethod = "GET"
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -34,7 +36,7 @@ class getPopularNewsResponse {
                 
                 do{
                     if let jsonPetitions = try? JSONDecoder().decode(BreakingNewsResult.self, from: data) {
-                        newsList = jsonPetitions.articles!
+                        searchedNews = jsonPetitions.articles!
                     }
                 }
                 catch {
@@ -45,7 +47,7 @@ class getPopularNewsResponse {
         }
         task.resume()
         semaphore.wait()
-        return newsList!
+        return searchedNews!
     }
     
 }

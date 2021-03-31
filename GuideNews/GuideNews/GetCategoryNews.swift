@@ -1,21 +1,20 @@
 //
-//  GetPopularNews.swift
+//  GetCategoryNews.swift
 //  GuideNews
 //
-//  Created by MacOS on 29.03.2021.
+//  Created by MacOS on 30.03.2021.
 //
 
 import Foundation
 
-class getPopularNewsResponse {
+class GetCategoryNews {
     
-    static func getPopularNews() -> [BreakingNews] {
+    static func getCategoryNews(category : String) -> [BreakingNews] {
         
-        var newsList : [BreakingNews]?
-        
+        var categoryNews : [BreakingNews]?
         var semaphore = DispatchSemaphore (value: 0)
         
-        var request = URLRequest(url: URL(string: "https://newsapi.org/v2/top-headlines?country=us&apiKey=\(Constant.SECONDAPIKEY)")!,timeoutInterval: Double.infinity)
+        var request = URLRequest(url: URL(string: "https://newsapi.org/v2/top-headlines?country=us&category=\(category)&apiKey=\(Constant.SECONDAPIKEY)")!,timeoutInterval: Double.infinity)
         request.httpMethod = "GET"
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -34,7 +33,7 @@ class getPopularNewsResponse {
                 
                 do{
                     if let jsonPetitions = try? JSONDecoder().decode(BreakingNewsResult.self, from: data) {
-                        newsList = jsonPetitions.articles!
+                        categoryNews = jsonPetitions.articles!
                     }
                 }
                 catch {
@@ -45,7 +44,7 @@ class getPopularNewsResponse {
         }
         task.resume()
         semaphore.wait()
-        return newsList!
+        return categoryNews!
     }
     
 }

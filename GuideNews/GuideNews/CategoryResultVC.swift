@@ -12,12 +12,30 @@ class CategoryResultVC: UIViewController {
     
     
     @IBOutlet weak var categoryResultTableView: UITableView!
+    var chosenCategory = ""
+    var categoryNews : [BreakingNews]?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         categoryResultTableView.backgroundColor = .clear
         searchbar()
+        self.categoryNews = GetCategoryNews.getCategoryNews(category: self.chosenCategory)
+        navigationItem.title = chosenCategory
+        
+       
+        
+        
         // Do any additional setup after loading the view.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let index = sender as? Int
+        if segue.identifier == "fromCategorytoDetail" {
+            
+            let destinationVC = segue.destination as!  NewsDetailsVC
+            destinationVC.breakingNews = categoryNews![index!]
+        }
     }
     
 
@@ -28,16 +46,21 @@ class CategoryResultVC: UIViewController {
 
 extension CategoryResultVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return categoryNews?.count ?? 0
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "categoryResult", for: indexPath) as! CategoryResultTVC
-        cell.categoryResultimage.image = UIImage(named: "popular")
-        cell.categoryResultTitle.text = "asdada as dada a da da da adasa da adadad asd ad ada da ada ad adasad ad ad asdasdadsadsa ada a da da ad"
-        cell.categoryResultSource.text = "Source: newyorktimes.com"
+        let news = categoryNews![indexPath.row]
+        cell.cellEdit(newsList: news)
+        
         cell.backgroundColor = .clear
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "fromCategorytoDetail", sender: indexPath.row)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
