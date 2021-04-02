@@ -14,7 +14,7 @@ class YesterdayCVC: UICollectionViewCell {
     func cellEdit(newsList : BreakingNews) {
         yesterdayTitle.text = newsList.title
         
-        if let url = URL(string: "\(newsList.urlToImage!)"){
+        if let url = URL(string: "\(newsList.urlToImage ?? "")"){
             DispatchQueue.global().async {
                 let data = try? Data(contentsOf: url)
                 

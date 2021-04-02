@@ -13,6 +13,7 @@
 		22214D32261322A2001AEA81 /* GetCategoryNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22214D31261322A2001AEA81 /* GetCategoryNews.swift */; };
 		222763B32611A15D00CFD42E /* BreakingNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222763B22611A15D00CFD42E /* BreakingNews.swift */; };
 		222763C02611A31500CFD42E /* GetPopularNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222763BF2611A31500CFD42E /* GetPopularNews.swift */; };
+		223526B72616EB8E0071360C /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223526B62616EB8E0071360C /* WebKit.framework */; };
 		229BE1B82610B124008D9F25 /* PopularCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229BE1B72610B124008D9F25 /* PopularCVC.swift */; };
 		22CD46EA260C749F00478697 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CD46E9260C749F00478697 /* AppDelegate.swift */; };
 		22CD46EC260C749F00478697 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CD46EB260C749F00478697 /* SceneDelegate.swift */; };
@@ -73,6 +74,7 @@
 		22214D31261322A2001AEA81 /* GetCategoryNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCategoryNews.swift; sourceTree = "<group>"; };
 		222763B22611A15D00CFD42E /* BreakingNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakingNews.swift; sourceTree = "<group>"; };
 		222763BF2611A31500CFD42E /* GetPopularNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPopularNews.swift; sourceTree = "<group>"; };
+		223526B62616EB8E0071360C /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		229BE1B72610B124008D9F25 /* PopularCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCVC.swift; sourceTree = "<group>"; };
 		22CD46E6260C749F00478697 /* GuideNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuideNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22CD46E9260C749F00478697 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				223526B72616EB8E0071360C /* WebKit.framework in Frameworks */,
 				E6754F5D8DC90D386D57A583 /* Pods_GuideNews.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,6 +301,7 @@
 		57F95974ACACAAE11B3F4C85 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				223526B62616EB8E0071360C /* WebKit.framework */,
 				BC0E7DC858BD945787DEE06D /* Pods_GuideNews.framework */,
 				3968714669D18D5304BD406B /* Pods_GuideNews_GuideNewsUITests.framework */,
 				32519CB949798F8AFEDEB805 /* Pods_GuideNewsTests.framework */,

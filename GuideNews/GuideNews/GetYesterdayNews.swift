@@ -12,12 +12,14 @@ class GetYesterdayNews {
     static func getYesterdayNews() -> [BreakingNews] {
         var yesterday = Date.yesterday
         let formattedYesterday = yesterday.getFormattedDate(format: "yyyy-MM-dd")
+        print("formatted yesterday is below")
+        print(formattedYesterday)
         
         var searchedNews : [BreakingNews]?
         
         var semaphore = DispatchSemaphore (value: 0)
         
-        var request = URLRequest(url: URL(string: "https://newsapi.org/v2/top-headlines?country=us&from=\(formattedYesterday)&sortBY=publishedAt&apiKey=\(Constant.SECONDAPIKEY)")!,timeoutInterval: Double.infinity)
+        var request = URLRequest(url: URL(string: "https://newsapi.org/v2/top-headlines?country=tr&from=\(formattedYesterday)&sortBY=publishedAt&apiKey=\(Constant.SECONDAPIKEY)")!,timeoutInterval: Double.infinity)
         request.httpMethod = "GET"
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in

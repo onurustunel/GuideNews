@@ -114,8 +114,6 @@ extension FeedVC : UICollectionViewDelegate, UICollectionViewDataSource {
             cell.cellEdit(newsList: news)
             return cell
             
-            return cell
-            
         }
      
         

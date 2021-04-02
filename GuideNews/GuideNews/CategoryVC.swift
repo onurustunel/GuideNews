@@ -32,18 +32,34 @@ class CategoryVC: UIViewController {
         }
     }
     
-    
-    
     func categoryCollectionViewLayout() {
-        let design :UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        let width = self.categoryCollectionView.frame.size.width
-        design.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        let cellWidth = (width-30)/2
-        design.itemSize = CGSize(width: cellWidth, height: cellWidth)
-        design.minimumInteritemSpacing = 10
-        design.minimumLineSpacing = 10
-        categoryCollectionView.collectionViewLayout = design
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        self.categoryCollectionView.collectionViewLayout = layout
+        self.categoryCollectionView!.contentInset = UIEdgeInsets(top: 10, left: 5, bottom:10, right: 5)
+        
+        if let layout = self.categoryCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.minimumInteritemSpacing = 5
+            layout.minimumLineSpacing = 10
+            layout.itemSize = CGSize(width: self.view.frame.size.width / 2 - 10 , height: self.view.frame.size.width / 2 - 10)
+            layout.invalidateLayout()
+        }
     }
+    
+    
+    
+    
+//    func categoryCollectionViewLayout() {
+//        let design :UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+//        let width = self.categoryCollectionView.frame.size.width
+//        design.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+//        let cellWidth = (width-30)/2
+//        design.itemSize = CGSize(width: cellWidth, height: cellWidth)
+//        design.minimumInteritemSpacing = 10
+//        design.minimumLineSpacing = 10
+//        categoryCollectionView.collectionViewLayout = design
+//    }
     
 
   

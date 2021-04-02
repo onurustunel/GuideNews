@@ -37,7 +37,7 @@ class NewsDetailsVC: UIViewController {
             newsDateLabel.text = dateFormatter.string(from: publishedDate)
             
             
-            if let url = URL(string: "\(news.urlToImage!)"){
+            if let url = URL(string: "\(news.urlToImage ?? "")"){
                 DispatchQueue.global().async {
                     let data = try? Data(contentsOf: url)
                     

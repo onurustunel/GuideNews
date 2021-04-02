@@ -45,6 +45,9 @@ extension FeedVC {
         
     }
     
+    
+    
+    
     func detailCollectionView() {
         
         let layout = UICollectionViewFlowLayout()
