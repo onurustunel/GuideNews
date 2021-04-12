@@ -9,8 +9,6 @@ import UIKit
 
 class CategoryResultVC: UIViewController {
     
-    
-    
     @IBOutlet weak var categoryResultTableView: UITableView!
     var chosenCategory = ""
     var categoryNews : [BreakingNews]?
@@ -24,8 +22,6 @@ class CategoryResultVC: UIViewController {
         navigationItem.title = chosenCategory
         
        
-        
-        
         // Do any additional setup after loading the view.
     }
     
@@ -38,9 +34,6 @@ class CategoryResultVC: UIViewController {
         }
     }
     
-
-   
-
 }
 
 

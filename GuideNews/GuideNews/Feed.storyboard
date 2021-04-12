@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -273,7 +274,18 @@
                             <constraint firstAttribute="trailing" secondItem="DX0-tm-bGH" secondAttribute="trailing" id="qmw-L0-iVd"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Popular" id="nPr-of-N6F"/>
+                    <navigationItem key="navigationItem" title="Popular" id="nPr-of-N6F">
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" id="1wK-5v-b69">
+                                <imageReference key="image" image="gearshape.fill" catalog="system" symbolScale="large"/>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="search-filled" id="vL2-x4-qgf">
+                                <connections>
+                                    <action selector="searchClicked:" destination="Hkq-xZ-RRk" id="mYX-Jk-UF6"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <connections>
                         <outlet property="interestCollectionView" destination="A3e-r2-ojT" id="Png-Qu-PuJ"/>
                         <outlet property="popularCollectionView" destination="I15-Tt-4Dr" id="YWb-Vc-Fvz"/>
@@ -426,7 +438,7 @@
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.60784313729999995" green="0.062745098040000002" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="24"/>
                         </textAttributes>
@@ -640,6 +652,26 @@
                                     <action selector="detailsClicked:" destination="Teb-bD-Yo4" eventType="touchUpInside" id="Hw7-YG-8RP"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iy3-OY-aAc">
+                                <rect key="frame" x="268" y="216.5" width="30" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="a8a-s2-BnG"/>
+                                    <constraint firstAttribute="width" constant="30" id="hFa-tM-QsE"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemGreenColor"/>
+                                <state key="normal" image="share">
+                                    <color key="titleColor" systemColor="systemRedColor"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
+                                        <integer key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="detailsClicked:" destination="Teb-bD-Yo4" eventType="touchUpInside" id="uhe-3t-P6f"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5SQ-KW-N03"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -653,10 +685,12 @@
                             <constraint firstItem="3iq-Rx-E4M" firstAttribute="top" secondItem="rwP-Fa-c3E" secondAttribute="bottom" constant="3" id="Vyo-G1-mUo"/>
                             <constraint firstItem="3zC-8R-V7P" firstAttribute="height" secondItem="UCq-Qs-bln" secondAttribute="height" multiplier="0.3" id="bQM-QA-ed2"/>
                             <constraint firstItem="5SQ-KW-N03" firstAttribute="bottom" secondItem="0FY-nf-xll" secondAttribute="bottom" constant="20" id="cRY-mz-lMa"/>
+                            <constraint firstItem="iy3-OY-aAc" firstAttribute="centerY" secondItem="3iq-Rx-E4M" secondAttribute="centerY" id="egK-vV-s8S"/>
                             <constraint firstItem="5SQ-KW-N03" firstAttribute="trailing" secondItem="rwP-Fa-c3E" secondAttribute="trailing" constant="20" id="fFi-ZK-yYu"/>
                             <constraint firstItem="DJu-LC-cIQ" firstAttribute="leading" secondItem="5SQ-KW-N03" secondAttribute="leading" constant="20" id="i50-Mw-L1g"/>
                             <constraint firstItem="DJu-LC-cIQ" firstAttribute="top" secondItem="rwP-Fa-c3E" secondAttribute="bottom" constant="8" id="jVA-3F-Red"/>
                             <constraint firstAttribute="trailing" secondItem="3zC-8R-V7P" secondAttribute="trailing" id="mn8-Rl-sTU"/>
+                            <constraint firstItem="3iq-Rx-E4M" firstAttribute="leading" secondItem="iy3-OY-aAc" secondAttribute="trailing" constant="24" id="ozc-EC-66m"/>
                             <constraint firstItem="5SQ-KW-N03" firstAttribute="trailing" secondItem="DJu-LC-cIQ" secondAttribute="trailing" constant="100" id="vxR-HD-sPG"/>
                             <constraint firstItem="3iq-Rx-E4M" firstAttribute="centerY" secondItem="DJu-LC-cIQ" secondAttribute="centerY" id="wuj-SW-IqE"/>
                             <constraint firstItem="rwP-Fa-c3E" firstAttribute="leading" secondItem="5SQ-KW-N03" secondAttribute="leading" constant="20" id="xas-jx-1a5"/>
@@ -694,7 +728,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="159"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beauty" translatesAutoresizingMaskIntoConstraints="NO" id="RlZ-ng-oc7">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RlZ-ng-oc7">
                                                     <rect key="frame" x="32" y="23" width="120" height="120"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="120" id="7zb-9R-avQ"/>
@@ -772,14 +806,15 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="Btl-HR-H20"/>
+        <segue reference="LvJ-M5-aA6"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="beauty" width="640" height="640"/>
         <image name="category" width="32" height="32"/>
         <image name="cinema" width="433" height="433"/>
+        <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <image name="home-filled" width="32" height="32"/>
         <image name="search-filled" width="32" height="32"/>
+        <image name="share" width="512" height="512"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
@@ -788,6 +823,9 @@
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -14,7 +14,7 @@ class GetCategoryNews {
         var categoryNews : [BreakingNews]?
         var semaphore = DispatchSemaphore (value: 0)
         
-        var request = URLRequest(url: URL(string: "https://newsapi.org/v2/top-headlines?country=tr&category=\(category)&apiKey=\(Constant.SECONDAPIKEY)")!,timeoutInterval: Double.infinity)
+        var request = URLRequest(url: URL(string: "https://newsapi.org/v2/top-headlines?country=ua&category=\(category)&apiKey=\(Constant.SECONDAPIKEY)")!,timeoutInterval: Double.infinity)
         request.httpMethod = "GET"
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in

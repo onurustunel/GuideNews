@@ -42,6 +42,10 @@ class FeedVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func searchClicked(_ sender: Any) {
+        tabBarController?.selectedIndex = 1
+    }
+    
     func backgroundCleaner() {
         popularCollectionView.backgroundColor = .clear
         interestCollectionView.backgroundColor = .clear

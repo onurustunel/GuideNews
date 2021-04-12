@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cGj-sY-ofI">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -178,9 +179,104 @@
             </objects>
             <point key="canvasLocation" x="660.86956521739137" y="101.78571428571428"/>
         </scene>
+        <!--CountryVC-->
+        <scene sceneID="Fa1-AN-lMN">
+            <objects>
+                <viewController id="cGj-sY-ofI" customClass="CountryVC" customModule="GuideNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="koG-KG-4hh" customClass="BackgroundGradientView" customModule="GuideNews" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Z8W-VZ-X17">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HSe-1B-97k">
+                                    <size key="itemSize" width="179" height="168"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="countryCell" id="Fkk-O3-4ZP" customClass="CountryCVC" customModule="GuideNews" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="179" height="168"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="aNt-Zj-yI0">
+                                            <rect key="frame" x="0.0" y="0.0" width="179" height="168"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="turkey" translatesAutoresizingMaskIntoConstraints="NO" id="xcs-jb-k2B">
+                                                    <rect key="frame" x="4" y="4" width="171" height="160"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
+                                                            <integer key="value" value="8"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <view hidden="YES" alpha="0.30000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jmJ-MU-xxL">
+                                                    <rect key="frame" x="4" y="4" width="171" height="160"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
+                                                            <integer key="value" value="8"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ENTERTAINMENT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PcD-ZL-OC4">
+                                                    <rect key="frame" x="10" y="137" width="159" height="19"/>
+                                                    <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="xcs-jb-k2B" firstAttribute="top" secondItem="aNt-Zj-yI0" secondAttribute="top" constant="4" id="14T-Mm-HRK"/>
+                                                <constraint firstItem="PcD-ZL-OC4" firstAttribute="leading" secondItem="aNt-Zj-yI0" secondAttribute="leading" constant="10" id="LbO-WZ-5h4"/>
+                                                <constraint firstItem="xcs-jb-k2B" firstAttribute="leading" secondItem="aNt-Zj-yI0" secondAttribute="leading" constant="4" id="Ljj-A1-Vrj"/>
+                                                <constraint firstAttribute="bottom" secondItem="xcs-jb-k2B" secondAttribute="bottom" constant="4" id="Mx2-O6-Bxi"/>
+                                                <constraint firstAttribute="trailing" secondItem="jmJ-MU-xxL" secondAttribute="trailing" constant="4" id="OaL-Lw-jwF"/>
+                                                <constraint firstAttribute="trailing" secondItem="PcD-ZL-OC4" secondAttribute="trailing" constant="10" id="Rm2-DD-3Hf"/>
+                                                <constraint firstAttribute="bottom" secondItem="PcD-ZL-OC4" secondAttribute="bottom" constant="12" id="azg-Hz-Vr9"/>
+                                                <constraint firstItem="jmJ-MU-xxL" firstAttribute="leading" secondItem="aNt-Zj-yI0" secondAttribute="leading" constant="4" id="dop-ur-FA2"/>
+                                                <constraint firstAttribute="bottom" secondItem="jmJ-MU-xxL" secondAttribute="bottom" constant="4" id="kcp-js-Ybn"/>
+                                                <constraint firstItem="jmJ-MU-xxL" firstAttribute="top" secondItem="aNt-Zj-yI0" secondAttribute="top" constant="4" id="wjG-iW-CMk"/>
+                                                <constraint firstAttribute="trailing" secondItem="xcs-jb-k2B" secondAttribute="trailing" constant="4" id="yJC-2H-BYo"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="179" height="168"/>
+                                        <connections>
+                                            <outlet property="countryImage" destination="xcs-jb-k2B" id="tFN-Zn-PMO"/>
+                                            <outlet property="countryName" destination="PcD-ZL-OC4" id="QqY-mT-BzY"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="cGj-sY-ofI" id="Ai0-e7-8A9"/>
+                                    <outlet property="delegate" destination="cGj-sY-ofI" id="XhH-k0-GSO"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="05a-df-cWx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Z8W-VZ-X17" firstAttribute="leading" secondItem="05a-df-cWx" secondAttribute="leading" id="0Pc-xk-nd6"/>
+                            <constraint firstItem="Z8W-VZ-X17" firstAttribute="trailing" secondItem="05a-df-cWx" secondAttribute="trailing" id="DEw-2z-0r8"/>
+                            <constraint firstAttribute="bottom" secondItem="Z8W-VZ-X17" secondAttribute="bottom" id="sZX-i5-RtI"/>
+                            <constraint firstItem="Z8W-VZ-X17" firstAttribute="top" secondItem="koG-KG-4hh" secondAttribute="top" id="vAC-7g-eln"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="z2d-AN-n8u"/>
+                    <connections>
+                        <outlet property="countryCollectionView" destination="Z8W-VZ-X17" id="QCa-fH-j0F"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ktg-n4-4av" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1546" y="102"/>
+        </scene>
     </scenes>
     <resources>
         <image name="cinema" width="433" height="433"/>
+        <image name="turkey" width="128" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

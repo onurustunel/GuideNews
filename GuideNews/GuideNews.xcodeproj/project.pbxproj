@@ -14,6 +14,8 @@
 		222763B32611A15D00CFD42E /* BreakingNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222763B22611A15D00CFD42E /* BreakingNews.swift */; };
 		222763C02611A31500CFD42E /* GetPopularNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222763BF2611A31500CFD42E /* GetPopularNews.swift */; };
 		223526B72616EB8E0071360C /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223526B62616EB8E0071360C /* WebKit.framework */; };
+		224BAD3A2623883A008C9026 /* CountryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224BAD392623883A008C9026 /* CountryVC.swift */; };
+		224BAD3F26238965008C9026 /* CountryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224BAD3E26238965008C9026 /* CountryCVC.swift */; };
 		229BE1B82610B124008D9F25 /* PopularCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229BE1B72610B124008D9F25 /* PopularCVC.swift */; };
 		22CD46EA260C749F00478697 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CD46E9260C749F00478697 /* AppDelegate.swift */; };
 		22CD46EC260C749F00478697 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CD46EB260C749F00478697 /* SceneDelegate.swift */; };
@@ -75,6 +77,8 @@
 		222763B22611A15D00CFD42E /* BreakingNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakingNews.swift; sourceTree = "<group>"; };
 		222763BF2611A31500CFD42E /* GetPopularNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPopularNews.swift; sourceTree = "<group>"; };
 		223526B62616EB8E0071360C /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		224BAD392623883A008C9026 /* CountryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryVC.swift; sourceTree = "<group>"; };
+		224BAD3E26238965008C9026 /* CountryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCVC.swift; sourceTree = "<group>"; };
 		229BE1B72610B124008D9F25 /* PopularCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCVC.swift; sourceTree = "<group>"; };
 		22CD46E6260C749F00478697 /* GuideNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuideNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22CD46E9260C749F00478697 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -236,6 +240,7 @@
 				22FF3A462610D850002B86F5 /* SearchTVC.swift */,
 				22FF3A502610F1C3002B86F5 /* CategoryCVC.swift */,
 				22FF3A622610FC61002B86F5 /* CategoryResultTVC.swift */,
+				224BAD3E26238965008C9026 /* CountryCVC.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -251,6 +256,7 @@
 				22FF3A4B2610EFA0002B86F5 /* CategoryVC.swift */,
 				22FF3A5D2610FC36002B86F5 /* CategoryResultVC.swift */,
 				22F80A452611E58E000A68EA /* NewsDetailsVC.swift */,
+				224BAD392623883A008C9026 /* CountryVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -564,11 +570,13 @@
 				22CD4742260C844B00478697 /* SplashScreenCarousel.swift in Sources */,
 				22FF3A422610D4BD002B86F5 /* SearchVC.swift in Sources */,
 				229BE1B82610B124008D9F25 /* PopularCVC.swift in Sources */,
+				224BAD3F26238965008C9026 /* CountryCVC.swift in Sources */,
 				22FF3A512610F1C3002B86F5 /* CategoryCVC.swift in Sources */,
 				22CD474E260C97C300478697 /* InterestVC.swift in Sources */,
 				22FF3A4C2610EFA0002B86F5 /* CategoryVC.swift in Sources */,
 				222763C02611A31500CFD42E /* GetPopularNews.swift in Sources */,
 				22FF3A632610FC61002B86F5 /* CategoryResultTVC.swift in Sources */,
+				224BAD3A2623883A008C9026 /* CountryVC.swift in Sources */,
 				22FF3A202610C203002B86F5 /* YesterdayCVC.swift in Sources */,
 				22FF3A5E2610FC36002B86F5 /* CategoryResultVC.swift in Sources */,
 				22CD4769260CA30100478697 /* InterestStruct.swift in Sources */,
