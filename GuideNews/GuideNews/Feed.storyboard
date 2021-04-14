@@ -278,8 +278,11 @@
                         <rightBarButtonItems>
                             <barButtonItem title="Item" id="1wK-5v-b69">
                                 <imageReference key="image" image="gearshape.fill" catalog="system" symbolScale="large"/>
+                                <connections>
+                                    <action selector="settingsClicked:" destination="Hkq-xZ-RRk" id="hoG-rv-HeR"/>
+                                </connections>
                             </barButtonItem>
-                            <barButtonItem title="Item" image="search-filled" id="vL2-x4-qgf">
+                            <barButtonItem title="Item" image="search-filled_smaller" id="vL2-x4-qgf">
                                 <connections>
                                     <action selector="searchClicked:" destination="Hkq-xZ-RRk" id="mYX-Jk-UF6"/>
                                 </connections>
@@ -289,6 +292,7 @@
                     <connections>
                         <outlet property="interestCollectionView" destination="A3e-r2-ojT" id="Png-Qu-PuJ"/>
                         <outlet property="popularCollectionView" destination="I15-Tt-4Dr" id="YWb-Vc-Fvz"/>
+                        <outlet property="specialCategories" destination="3gD-LI-wYn" id="Oxl-HT-n81"/>
                         <outlet property="yesterdayCollectionView" destination="CSw-Gc-UBH" id="LLd-wj-dfc"/>
                         <segue destination="Teb-bD-Yo4" kind="show" identifier="fromPopularFeedtoDetail" id="LvJ-M5-aA6"/>
                         <segue destination="Teb-bD-Yo4" kind="show" identifier="fromInterestFeedtoDetail" id="zVd-hC-aSa"/>
@@ -814,6 +818,7 @@
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <image name="home-filled" width="32" height="32"/>
         <image name="search-filled" width="32" height="32"/>
+        <image name="search-filled_smaller" width="38" height="39"/>
         <image name="share" width="512" height="512"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

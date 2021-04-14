@@ -10,7 +10,7 @@ import Foundation
 class GetSearchedNews {
     
     static func getSearchedNews(searchedText : String) -> [BreakingNews] {
-        
+                
         var searchedNews : [BreakingNews]?
         
         var semaphore = DispatchSemaphore (value: 0)

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cGj-sY-ofI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -13,7 +13,7 @@
         <!--Splash ScreenVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SplashScreenVC" customModule="GuideNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Main" extendedLayoutIncludesOpaqueBars="YES" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="SplashScreenVC" customModule="GuideNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -29,7 +29,7 @@
                                     <constraint firstAttribute="height" constant="44" id="VAL-Je-Dwi"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="21"/>
-                                <state key="normal" title="Chose your interests">
+                                <state key="normal" title="Chose Your Region">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -56,12 +56,12 @@
                     </view>
                     <connections>
                         <outlet property="carousel" destination="gv7-MA-RoT" id="Lel-8q-R7D"/>
-                        <segue destination="gT0-hC-VhD" kind="presentation" identifier="toInterestVC" modalPresentationStyle="fullScreen" id="LtG-Ni-hwh"/>
+                        <segue destination="cGj-sY-ofI" kind="presentation" identifier="toCountryVC" modalPresentationStyle="fullScreen" id="aqk-Nl-6lD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-146" y="102"/>
+            <point key="canvasLocation" x="-371" y="102"/>
         </scene>
         <!--InterestVC-->
         <scene sceneID="nzc-jH-3qx">
@@ -177,7 +177,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wst-eT-rIx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="660.86956521739137" y="101.78571428571428"/>
+            <point key="canvasLocation" x="1338" y="118"/>
         </scene>
         <!--CountryVC-->
         <scene sceneID="Fa1-AN-lMN">
@@ -191,21 +191,21 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HSe-1B-97k">
-                                    <size key="itemSize" width="179" height="168"/>
+                                    <size key="itemSize" width="378" height="245"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="countryCell" id="Fkk-O3-4ZP" customClass="CountryCVC" customModule="GuideNews" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="179" height="168"/>
+                                        <rect key="frame" x="18" y="0.0" width="378" height="245"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="aNt-Zj-yI0">
-                                            <rect key="frame" x="0.0" y="0.0" width="179" height="168"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="378" height="245"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="turkey" translatesAutoresizingMaskIntoConstraints="NO" id="xcs-jb-k2B">
-                                                    <rect key="frame" x="4" y="4" width="171" height="160"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tr" translatesAutoresizingMaskIntoConstraints="NO" id="xcs-jb-k2B">
+                                                    <rect key="frame" x="4" y="4" width="370" height="237"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
                                                             <integer key="value" value="8"/>
@@ -213,7 +213,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <view hidden="YES" alpha="0.30000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jmJ-MU-xxL">
-                                                    <rect key="frame" x="4" y="4" width="171" height="160"/>
+                                                    <rect key="frame" x="4" y="4" width="370" height="237"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
@@ -222,7 +222,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ENTERTAINMENT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PcD-ZL-OC4">
-                                                    <rect key="frame" x="10" y="137" width="159" height="19"/>
+                                                    <rect key="frame" x="10" y="214" width="358" height="19"/>
                                                     <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -242,7 +242,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="xcs-jb-k2B" secondAttribute="trailing" constant="4" id="yJC-2H-BYo"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="179" height="168"/>
+                                        <size key="customSize" width="378" height="245"/>
                                         <connections>
                                             <outlet property="countryImage" destination="xcs-jb-k2B" id="tFN-Zn-PMO"/>
                                             <outlet property="countryName" destination="PcD-ZL-OC4" id="QqY-mT-BzY"/>
@@ -250,8 +250,8 @@
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="cGj-sY-ofI" id="Ai0-e7-8A9"/>
-                                    <outlet property="delegate" destination="cGj-sY-ofI" id="XhH-k0-GSO"/>
+                                    <outlet property="dataSource" destination="cGj-sY-ofI" id="6iC-Yg-TbC"/>
+                                    <outlet property="delegate" destination="cGj-sY-ofI" id="6lq-1c-Up4"/>
                                 </connections>
                             </collectionView>
                         </subviews>
@@ -267,16 +267,17 @@
                     <navigationItem key="navigationItem" id="z2d-AN-n8u"/>
                     <connections>
                         <outlet property="countryCollectionView" destination="Z8W-VZ-X17" id="QCa-fH-j0F"/>
+                        <segue destination="gT0-hC-VhD" kind="presentation" identifier="toInterestVC" modalPresentationStyle="fullScreen" id="taU-yi-ebl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ktg-n4-4av" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1546" y="102"/>
+            <point key="canvasLocation" x="513.04347826086962" y="117.85714285714285"/>
         </scene>
     </scenes>
     <resources>
         <image name="cinema" width="433" height="433"/>
-        <image name="turkey" width="128" height="128"/>
+        <image name="tr" width="640" height="427"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

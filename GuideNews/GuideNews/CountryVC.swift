@@ -10,12 +10,13 @@ import UIKit
 class CountryVC: UIViewController {
     
     @IBOutlet weak var countryCollectionView: UICollectionView!
+    var savedCountryData = UserDefaults.standard
+    var chosenCountryArray = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         countryCollectionView.backgroundColor = .clear
         countryCollectionViewLayout()
-
         // Do any additional setup after loading the view.
     }
     
@@ -34,22 +35,15 @@ class CountryVC: UIViewController {
         }
     }
     
+    func saveData() {
+        savedCountryData.set(chosenCountryArray, forKey: "countryInfo")
+    }
+    
 
 }
 
 extension CountryVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    
-//    func saveYourInterest() {
-//        saveData()
-//
-//        if interestArray.count > 0 {
-//            let storyboard: UIStoryboard = UIStoryboard(name: "Feed", bundle: nil)
-//            let vc = storyboard.instantiateViewController(withIdentifier: "Feed") as! FeedTabBarController
-//            self.show(vc, sender: self)
-//        }
-//    }
-   
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return Constant.countryName.count
@@ -61,10 +55,16 @@ extension CountryVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
         let name = Constant.countryName[indexPath.row]
         cell.countryName.text = "\(name)"
         cell.countryImage.image =  UIImage(named: "\(name)")
-        
         cell.backgroundColor = .clear
-      
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        chosenCountryArray.removeAll()
+        chosenCountryArray.append(Constant.countryName[indexPath.row])
+        saveData()
+        print(chosenCountryArray.count)
+        performSegue(withIdentifier: "toInterestVC", sender: next)
     }
     
 

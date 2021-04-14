@@ -11,6 +11,7 @@ import UIKit
 class FeedVC: UIViewController {
     
     
+    @IBOutlet weak var specialCategories: UILabel!
     @IBOutlet weak var popularCollectionView: UICollectionView!
     
     @IBOutlet weak var interestCollectionView: UICollectionView!
@@ -25,11 +26,15 @@ class FeedVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if let savedInterest = savedDataControl.array(forKey: "savedInterests") as? [String]  {
+            print(savedInterest.count, "adet categori bulundu")
+            let random =  Int(arc4random_uniform(UInt32(savedInterest.count)))
+            specialCategories.text = savedInterest[random]
             
-            searchedList = GetSearchedNews.getSearchedNews(searchedText: "\(savedInterest[1])")
-            print("data \(savedInterest[0]) hakkında yazıların getirilmesi gerekiyor...")
             
+            searchedList = GetCategoryNews.getCategoryNews(category: savedInterest[random])
+            print("data \(savedInterest[random]) hakkında yazıların getirilmesi gerekiyor...")
         }
+        
         backgroundCleaner()
         CollectionViewsLayout()        
         newsList = getPopularNewsResponse.getPopularNews()
@@ -56,6 +61,26 @@ class FeedVC: UIViewController {
         popularCollecionView()
         detailCollectionView()
         yesterdayCollectionview()
+    }
+    
+    
+    @IBAction func settingsClicked(_ sender: Any) {
+//        let alert = UIAlertController(title: "Setting", message: "Are you sure to change your personal settings?", preferredStyle: .alert)
+//        let yesButton = UIAlertAction(title: "Yes", style: .default) { (action) in
+//            self.newsList!.removeAll()
+//            self.searchedList!.removeAll()
+//            self.yesterdayList!.removeAll()
+//            
+//            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//            let vc = storyboard.instantiateViewController(withIdentifier: "Main") as! SplashScreenVC
+//            self.show(vc, sender: self)
+//        }
+//        yesButton.setValue(UIColor.red, forKey: "titleTextColor")
+//        let noButton = UIAlertAction(title: "No", style: .cancel, handler: nil)
+//        noButton.setValue(UIColor.red, forKey: "titleTextColor")
+//        alert.addAction(yesButton)
+//        alert.addAction(noButton)
+//        present(alert, animated: true, completion: nil)
     }
     // fromYesterdayFeedtoDetail
     
@@ -110,17 +135,15 @@ extension FeedVC : UICollectionViewDelegate, UICollectionViewDataSource {
             return cell
             
         }  else {
-            
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "yesterdayCell", for: indexPath) as! YesterdayCVC
-            cell.backgroundColor = .clear            
+            cell.backgroundColor = .clear
             
             var news = yesterdayList![indexPath.row]
             cell.cellEdit(newsList: news)
             return cell
             
         }
-     
-        
+            
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

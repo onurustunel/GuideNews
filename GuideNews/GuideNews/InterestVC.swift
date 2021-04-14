@@ -21,6 +21,9 @@ class InterestVC: UIViewController{
         interestCollectionViewLayout()
         interestCollectionView.register(CollectionViewFooter.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: CollectionViewFooter.identifier)
         
+        print(Language.ChosenLanguage(), "dilinde seçim yapıldı...")
+        
+        
     }
     
     
@@ -57,6 +60,8 @@ class InterestVC: UIViewController{
     
     
     func saveData() {
+        
+        
         savingData.set(interestArray, forKey: "savedInterests")
     }
        
@@ -71,7 +76,7 @@ extension InterestVC: UICollectionViewDelegate, UICollectionViewDataSource,  Add
         if interestArray.count > 0 {
             let storyboard: UIStoryboard = UIStoryboard(name: "Feed", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "Feed") as! FeedTabBarController
-            self.show(vc, sender: self)
+             self.show(vc, sender: self)
         }
     }
     

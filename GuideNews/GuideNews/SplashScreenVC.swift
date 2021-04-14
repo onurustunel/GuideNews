@@ -16,11 +16,13 @@ class SplashScreenVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         carousel.slides = SplashScreenCarousel.setupCarousel()
-              
+        self.navigationController?.isNavigationBarHidden = true
+        self.tabBarController?.tabBar.isHidden = true
+                     
     }
 
     @IBAction func interestButtonClicked(_ sender: Any) {
-        performSegue(withIdentifier: "toInterestVC", sender: nil)
+        performSegue(withIdentifier: "toCountryVC", sender: nil)
     }
     
     
