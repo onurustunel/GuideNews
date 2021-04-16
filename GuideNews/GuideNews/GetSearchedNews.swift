@@ -15,7 +15,7 @@ class GetSearchedNews {
         
         var semaphore = DispatchSemaphore (value: 0)
         
-        var request = URLRequest(url: URL(string: "https://newsapi.org/v2/everything?q=\(searchedText)&sortBy=popularity&apiKey=\(Constant.SECONDAPIKEY)")!,timeoutInterval: Double.infinity)
+        var request = URLRequest(url: URL(string: "https://newsapi.org/v2/everything?q=\(searchedText)&sortBy=popularity&apiKey=\(Constant.APIKEY)")!,timeoutInterval: Double.infinity)
         request.httpMethod = "GET"
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
