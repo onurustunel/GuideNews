@@ -64,24 +64,7 @@ class FeedVC: UIViewController {
     }
     
     
-    @IBAction func settingsClicked(_ sender: Any) {
-//        let alert = UIAlertController(title: "Setting", message: "Are you sure to change your personal settings?", preferredStyle: .alert)
-//        let yesButton = UIAlertAction(title: "Yes", style: .default) { (action) in
-//            self.newsList!.removeAll()
-//            self.searchedList!.removeAll()
-//            self.yesterdayList!.removeAll()
-//            
-//            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//            let vc = storyboard.instantiateViewController(withIdentifier: "Main") as! SplashScreenVC
-//            self.show(vc, sender: self)
-//        }
-//        yesButton.setValue(UIColor.red, forKey: "titleTextColor")
-//        let noButton = UIAlertAction(title: "No", style: .cancel, handler: nil)
-//        noButton.setValue(UIColor.red, forKey: "titleTextColor")
-//        alert.addAction(yesButton)
-//        alert.addAction(noButton)
-//        present(alert, animated: true, completion: nil)
-    }
+
     // fromYesterdayFeedtoDetail
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

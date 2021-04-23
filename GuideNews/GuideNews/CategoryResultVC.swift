@@ -12,6 +12,9 @@ class CategoryResultVC: UIViewController {
     @IBOutlet weak var categoryResultTableView: UITableView!
     var chosenCategory = ""
     var categoryNews : [BreakingNews]?
+    var filteredNews : [BreakingNews]?
+    var allNews : [BreakingNews]?
+    var searchedWord = ""
     
     
     override func viewDidLoad() {
@@ -20,6 +23,7 @@ class CategoryResultVC: UIViewController {
         searchbar()
         self.categoryNews = GetCategoryNews.getCategoryNews(category: self.chosenCategory)
         navigationItem.title = chosenCategory
+        allNews = categoryNews
         
        
         // Do any additional setup after loading the view.
@@ -33,6 +37,15 @@ class CategoryResultVC: UIViewController {
             destinationVC.breakingNews = categoryNews![index!]
         }
     }
+    func makeSearch(name: String) {
+        var filteredList = categoryNews!.filter({$0.title!.lowercased().contains(name.lowercased())})
+        categoryNews = filteredList
+        
+        DispatchQueue.main.async {
+            self.categoryResultTableView.reloadData()
+        }
+    }
+    
     
 }
 
@@ -60,22 +73,23 @@ extension CategoryResultVC : UITableViewDelegate, UITableViewDataSource {
         return 144
     }
     
+    
 }
 
 extension CategoryResultVC: UISearchBarDelegate {
     
-//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//        searchedWord = searchText
-//        if searchText == "" {
-//            childrenList =  companyList[0].children!
-//            companyTableView.reloadData()
-//
-//        } else {
-//            makeSearch(name: searchedWord)
-//            print(childrenList.count)
-//
-//        }
-// }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    
+        searchedWord = searchText
+        if searchText == "" {
+            categoryNews =  allNews
+            categoryResultTableView.reloadData()
+            
+        } else {
+            makeSearch(name: searchedWord)
+            
+        }
+    }
 
 }
 
@@ -95,4 +109,16 @@ extension CategoryResultVC {
         categoryResultTableView.tableHeaderView = searchBar
     }
 
+}
+extension UIViewController {
+    
+    func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }

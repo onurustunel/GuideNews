@@ -68,6 +68,21 @@ extension SearchVC : UITableViewDelegate, UITableViewDataSource {
 
 extension SearchVC: UISearchBarDelegate {
     
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+         let text = searchBar.searchTextField.text
+            print(text)
+        
+        newsList?.removeAll()
+        newsList = GetSearchedNews.getSearchedNews(searchedText: text ?? "")
+        DispatchQueue.main.async {
+            self.searchTableView.reloadData()
+        }
+        
+        view.endEditing(true)
+        
+    }
+    
 //    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 //        searchedWord = searchText
 //        if searchText == "" {

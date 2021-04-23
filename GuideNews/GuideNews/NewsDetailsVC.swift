@@ -52,6 +52,13 @@ class NewsDetailsVC: UIViewController {
         }
     }
     
+    
+    @IBAction func shareClicked(_ sender: Any) {
+        print(breakingNews?.url ?? "")
+        let activityVC = UIActivityViewController(activityItems: [breakingNews?.url ?? ""], applicationActivities: nil)
+        present(activityVC, animated: true, completion: nil)
+    }
+    
 
     @IBAction func detailsClicked(_ sender: Any) {
         if let link = breakingNews?.url {

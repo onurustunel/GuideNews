@@ -91,13 +91,13 @@
                                                 </connections>
                                             </collectionView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For You" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gD-LI-wYn">
-                                                <rect key="frame" x="24" y="386" width="123.5" height="40"/>
-                                                <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="36"/>
+                                                <rect key="frame" x="24" y="386" width="109.5" height="35.5"/>
+                                                <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="32"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="A3e-r2-ojT">
-                                                <rect key="frame" x="8" y="450" width="398" height="582"/>
+                                                <rect key="frame" x="8" y="445.5" width="398" height="582"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="582" id="y8u-Vp-O19"/>
@@ -228,7 +228,7 @@
                                                 </connections>
                                             </collectionView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yesterday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDN-Sn-TqB">
-                                                <rect key="frame" x="24" y="1056" width="152" height="40"/>
+                                                <rect key="frame" x="24" y="1051.5" width="152" height="40"/>
                                                 <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="36"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -275,19 +275,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Popular" id="nPr-of-N6F">
-                        <rightBarButtonItems>
-                            <barButtonItem title="Item" id="1wK-5v-b69">
-                                <imageReference key="image" image="gearshape.fill" catalog="system" symbolScale="large"/>
-                                <connections>
-                                    <action selector="settingsClicked:" destination="Hkq-xZ-RRk" id="hoG-rv-HeR"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="Item" image="search-filled_smaller" id="vL2-x4-qgf">
-                                <connections>
-                                    <action selector="searchClicked:" destination="Hkq-xZ-RRk" id="mYX-Jk-UF6"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="search-filled_smaller" id="vL2-x4-qgf">
+                            <connections>
+                                <action selector="searchClicked:" destination="Hkq-xZ-RRk" id="mYX-Jk-UF6"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="interestCollectionView" destination="A3e-r2-ojT" id="Png-Qu-PuJ"/>
@@ -627,16 +619,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="28/03/2021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJu-LC-cIQ">
-                                <rect key="frame" x="20" y="221.5" width="294" height="20"/>
+                                <rect key="frame" x="20" y="221.5" width="294" height="14"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3zC-8R-V7P">
-                                <rect key="frame" x="0.0" y="256.5" width="414" height="269"/>
+                                <rect key="frame" x="0.0" y="250.5" width="414" height="269"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0FY-nf-xll">
-                                <rect key="frame" x="20" y="545.5" width="374" height="247.5"/>
+                                <rect key="frame" x="20" y="539.5" width="374" height="253.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -644,10 +636,10 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3iq-Rx-E4M">
-                                <rect key="frame" x="322" y="216.5" width="72" height="30"/>
+                                <rect key="frame" x="322" y="216.5" width="72" height="24"/>
                                 <color key="backgroundColor" red="0.60784313729999995" green="0.062745098040000002" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="cRm-wa-vjE"/>
+                                    <constraint firstAttribute="height" constant="24" id="cRm-wa-vjE"/>
                                     <constraint firstAttribute="width" constant="72" id="mu7-AL-UbP"/>
                                 </constraints>
                                 <state key="normal" title="Details">
@@ -655,7 +647,7 @@
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
-                                        <integer key="value" value="12"/>
+                                        <integer key="value" value="7"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -663,15 +655,16 @@
                                 </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iy3-OY-aAc">
-                                <rect key="frame" x="268" y="216.5" width="30" height="30"/>
+                                <rect key="frame" x="274" y="209.5" width="34" height="34"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="a8a-s2-BnG"/>
-                                    <constraint firstAttribute="width" constant="30" id="hFa-tM-QsE"/>
+                                    <constraint firstAttribute="width" constant="34" id="9wi-Oh-qef"/>
+                                    <constraint firstAttribute="height" constant="34" id="j2B-BY-jsx"/>
                                 </constraints>
-                                <color key="tintColor" systemColor="systemGreenColor"/>
-                                <state key="normal" image="share">
+                                <color key="tintColor" red="0.60784313729999995" green="0.062745098040000002" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
                                     <color key="titleColor" systemColor="systemRedColor"/>
+                                    <imageReference key="image" image="square.and.arrow.up.fill" catalog="system" symbolScale="large"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
@@ -679,7 +672,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="detailsClicked:" destination="Teb-bD-Yo4" eventType="touchUpInside" id="uhe-3t-P6f"/>
+                                    <action selector="shareClicked:" destination="Teb-bD-Yo4" eventType="touchUpInside" id="441-JN-II3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -687,20 +680,20 @@
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="5SQ-KW-N03" firstAttribute="trailing" secondItem="3iq-Rx-E4M" secondAttribute="trailing" constant="20" id="6Zy-rH-O6V"/>
+                            <constraint firstItem="iy3-OY-aAc" firstAttribute="centerY" secondItem="3iq-Rx-E4M" secondAttribute="centerY" constant="-2" id="7B2-zt-0G0"/>
                             <constraint firstItem="0FY-nf-xll" firstAttribute="top" secondItem="3zC-8R-V7P" secondAttribute="bottom" constant="20" id="7Jc-8i-9TV"/>
                             <constraint firstItem="3zC-8R-V7P" firstAttribute="leading" secondItem="UCq-Qs-bln" secondAttribute="leading" id="9eu-st-O7h"/>
                             <constraint firstItem="0FY-nf-xll" firstAttribute="leading" secondItem="5SQ-KW-N03" secondAttribute="leading" constant="20" id="Dbb-cV-pu1"/>
+                            <constraint firstItem="3iq-Rx-E4M" firstAttribute="leading" secondItem="iy3-OY-aAc" secondAttribute="trailing" constant="14" id="NdC-ls-3Sh"/>
                             <constraint firstItem="rwP-Fa-c3E" firstAttribute="top" secondItem="5SQ-KW-N03" secondAttribute="top" constant="32" id="Rzi-Uy-wLw"/>
                             <constraint firstItem="5SQ-KW-N03" firstAttribute="trailing" secondItem="0FY-nf-xll" secondAttribute="trailing" constant="20" id="SI8-u1-ZK8"/>
                             <constraint firstItem="3iq-Rx-E4M" firstAttribute="top" secondItem="rwP-Fa-c3E" secondAttribute="bottom" constant="3" id="Vyo-G1-mUo"/>
                             <constraint firstItem="3zC-8R-V7P" firstAttribute="height" secondItem="UCq-Qs-bln" secondAttribute="height" multiplier="0.3" id="bQM-QA-ed2"/>
                             <constraint firstItem="5SQ-KW-N03" firstAttribute="bottom" secondItem="0FY-nf-xll" secondAttribute="bottom" constant="20" id="cRY-mz-lMa"/>
-                            <constraint firstItem="iy3-OY-aAc" firstAttribute="centerY" secondItem="3iq-Rx-E4M" secondAttribute="centerY" id="egK-vV-s8S"/>
                             <constraint firstItem="5SQ-KW-N03" firstAttribute="trailing" secondItem="rwP-Fa-c3E" secondAttribute="trailing" constant="20" id="fFi-ZK-yYu"/>
                             <constraint firstItem="DJu-LC-cIQ" firstAttribute="leading" secondItem="5SQ-KW-N03" secondAttribute="leading" constant="20" id="i50-Mw-L1g"/>
                             <constraint firstItem="DJu-LC-cIQ" firstAttribute="top" secondItem="rwP-Fa-c3E" secondAttribute="bottom" constant="8" id="jVA-3F-Red"/>
                             <constraint firstAttribute="trailing" secondItem="3zC-8R-V7P" secondAttribute="trailing" id="mn8-Rl-sTU"/>
-                            <constraint firstItem="3iq-Rx-E4M" firstAttribute="leading" secondItem="iy3-OY-aAc" secondAttribute="trailing" constant="24" id="ozc-EC-66m"/>
                             <constraint firstItem="5SQ-KW-N03" firstAttribute="trailing" secondItem="DJu-LC-cIQ" secondAttribute="trailing" constant="100" id="vxR-HD-sPG"/>
                             <constraint firstItem="3iq-Rx-E4M" firstAttribute="centerY" secondItem="DJu-LC-cIQ" secondAttribute="centerY" id="wuj-SW-IqE"/>
                             <constraint firstItem="rwP-Fa-c3E" firstAttribute="leading" secondItem="5SQ-KW-N03" secondAttribute="leading" constant="20" id="xas-jx-1a5"/>
@@ -816,16 +809,15 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="LvJ-M5-aA6"/>
+        <segue reference="nln-0C-Dm1"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="category" width="32" height="32"/>
         <image name="cinema" width="433" height="433"/>
-        <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <image name="home-filled" width="32" height="32"/>
         <image name="search-filled" width="32" height="32"/>
         <image name="search-filled_smaller" width="38" height="39"/>
-        <image name="share" width="512" height="512"/>
+        <image name="square.and.arrow.up.fill" catalog="system" width="115" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
