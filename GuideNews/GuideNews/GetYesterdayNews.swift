@@ -20,7 +20,9 @@ class GetYesterdayNews {
         
         var semaphore = DispatchSemaphore (value: 0)
         
+
         var request = URLRequest(url: URL(string: "https://newsapi.org/v2/top-headlines?country=\(chosenLanguage)&from=\(formattedYesterday)&sortBY=publishedAt&apiKey=\(Constant.SECONDAPIKEY)")!,timeoutInterval: Double.infinity)
+
         request.httpMethod = "GET"
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in

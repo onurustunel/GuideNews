@@ -16,7 +16,10 @@ class getPopularNewsResponse {
         
         var semaphore = DispatchSemaphore (value: 0)
         
+
         var request = URLRequest(url: URL(string: "https://newsapi.org/v2/top-headlines?country=\(chosenLanguage)&apiKey=\(Constant.SECONDAPIKEY)")!,timeoutInterval: Double.infinity)
+
+
         request.httpMethod = "GET"
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
