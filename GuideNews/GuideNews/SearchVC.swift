@@ -17,6 +17,7 @@ class SearchVC: UIViewController {
         searchTableView.backgroundColor = .clear
         searchbar()
         newsList = getPopularNewsResponse.getPopularNews()
+        self.hideKeyboardWhenTappedAround()
 
         // Do any additional setup after loading the view.
     }

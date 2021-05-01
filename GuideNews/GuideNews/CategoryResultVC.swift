@@ -24,6 +24,7 @@ class CategoryResultVC: UIViewController {
         self.categoryNews = GetCategoryNews.getCategoryNews(category: self.chosenCategory)
         navigationItem.title = chosenCategory
         allNews = categoryNews
+        self.hideKeyboardWhenTappedAround() 
         
        
         // Do any additional setup after loading the view.
