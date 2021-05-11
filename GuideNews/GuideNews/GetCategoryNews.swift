@@ -1,54 +1,48 @@
 //
-//  GetCategoryNews.swift
+//  GetCategoryNewsMVVM.swift
 //  GuideNews
 //
-//  Created by MacOS on 30.03.2021.
+//  Created by MacOS on 9.05.2021.
 //
 
 import Foundation
 
 class GetCategoryNews {
     
-    static func getCategoryNews(category : String) -> [BreakingNews] {
+    
+    func getCategoryNews(category: String, completion: @escaping ([BreakingNews]?) -> ()) {
         let chosenLanguage = Language.ChosenLanguage()
         
-        var categoryNews : [BreakingNews]?
-        var semaphore = DispatchSemaphore (value: 0)
+        let request = URLRequest(url: URL(string: "https://newsapi.org/v2/top-headlines?country=\(chosenLanguage)&category=\(category)&apiKey=\(Constant.APIKEY)")!,timeoutInterval: Double.infinity)
         
-
-        var request = URLRequest(url: URL(string: "https://newsapi.org/v2/top-headlines?country=\(chosenLanguage)&category=\(category)&apiKey=\(Constant.SECONDAPIKEY)")!,timeoutInterval: Double.infinity)
-
-
-        request.httpMethod = "GET"
-        
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-          
+        URLSession.shared.dataTask(with: request) { data, response, error in
             guard let httpResponse  = response as? HTTPURLResponse else {
                 return
             }
             
-            if httpResponse.statusCode == 200 {
-                
-                guard let data = data else {
-                    print(String(describing: error))
-                    semaphore.signal()
-                    return
-                }
-                
-                do{
-                    if let jsonPetitions = try? JSONDecoder().decode(BreakingNewsResult.self, from: data) {
-                        categoryNews = jsonPetitions.articles!
-                    }
-                }
-                catch {
-                    print(error.localizedDescription)
-                }
-                semaphore.signal()
+            if let error = error {
+                print(error.localizedDescription)
+                completion(nil)
             }
-        }
-        task.resume()
-        semaphore.wait()
-        return categoryNews!
+            
+            if httpResponse.statusCode == 200 {
+                if let data = data {
+                    
+                    let newsList = try? JSONDecoder().decode(BreakingNewsResult.self, from: data)
+                    
+                    if let newsList = newsList {
+                        completion(newsList.articles)
+                    }
+                    
+                }
+            }
+           
+            
+        }.resume()
+        
     }
+    
+    
+  
     
 }

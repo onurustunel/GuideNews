@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class BackgroundGradientView: UIView {
+class BackgroundGradientView : UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)

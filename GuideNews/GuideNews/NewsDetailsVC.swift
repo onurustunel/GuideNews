@@ -18,23 +18,24 @@ class NewsDetailsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view()
-       
+        configureView()
         
-
-        // Do any additional setup after loading the view.
+        animation()
+         
     }
     
     
-    func view() {
+    func animation() {
+        newsImage.AnimationFadein(startingAlpha: 0.3, duration: 1.5, curve: .curveEaseIn) 
+    }
+    
+    
+    func configureView() {
         if let news = breakingNews {
             newsTitleLabel.text = news.title
             newsDetailText.text = news.description
-            // Date Formating
-            let publishedDate : Date = news.publishedAt as? Date ?? Date()
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "MMM/dd/yyyy"
-            newsDateLabel.text = dateFormatter.string(from: publishedDate)
+            let date = "\(news.publishedAt?.prefix(10) ?? "")"
+            newsDateLabel.text = Helper.changeDateFormat(dateString: date, fromFormat: "yyyy-MM-dd", toFormat: "dd/MM/yyyy")
             
             
             if let url = URL(string: "\(news.urlToImage ?? "")"){
@@ -59,7 +60,7 @@ class NewsDetailsVC: UIViewController {
         present(activityVC, animated: true, completion: nil)
     }
     
-
+    
     @IBAction func detailsClicked(_ sender: Any) {
         if let link = breakingNews?.url {
             if let url = URL(string : "\(link)") {

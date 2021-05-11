@@ -25,9 +25,5 @@ class SplashScreenVC: UIViewController {
         performSegue(withIdentifier: "toCountryVC", sender: nil)
     }
     
-    
-    
-
-
 }
 

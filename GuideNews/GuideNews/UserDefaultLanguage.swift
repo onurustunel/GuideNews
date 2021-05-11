@@ -9,7 +9,8 @@ import Foundation
 
 class Language {
    static  func ChosenLanguage() -> String {
-        var savedDataControl = UserDefaults.standard
+   
+    let savedDataControl = UserDefaults.standard
         var chosenLanguage = ""
         if let chosenLanguageArray = savedDataControl.array(forKey: "countryInfo") as? [String]  {
             chosenLanguage = chosenLanguageArray[0]

@@ -12,40 +12,95 @@ class FeedVC: UIViewController {
     
     
     @IBOutlet weak var specialCategories: UILabel!
+    
+    @IBOutlet weak var secondSpecialCategories: UILabel!
+    
     @IBOutlet weak var popularCollectionView: UICollectionView!
     
     @IBOutlet weak var interestCollectionView: UICollectionView!
     
     @IBOutlet weak var yesterdayCollectionView: UICollectionView!
-    var newsList : [BreakingNews]?
-    var searchedList : [BreakingNews]?
-    var yesterdayList : [BreakingNews]?
+    
+    var newsList = [BreakingNews]()
+    var searchedList = [BreakingNews]()
+    var yesterdayList = [BreakingNews]()
     var savedDataControl = UserDefaults.standard
     
+   
+    @IBOutlet var mainView: BackgroundGradientView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let savedInterest = savedDataControl.array(forKey: "savedInterests") as? [String]  {
-            print(savedInterest.count, "adet categori bulundu")
+        getPopularNews()
+     
+        
+        if let savedInterest = savedDataControl.array(forKey: "savedInterests") as? [String] {
+          
+          
             let random =  Int(arc4random_uniform(UInt32(savedInterest.count)))
+            
+            var random2 : Int
+            repeat {
+                random2 = Int(arc4random_uniform(UInt32(savedInterest.count)))
+            } while random == random2
+             
             specialCategories.text = savedInterest[random]
+            secondSpecialCategories.text = savedInterest[random2]
             
+            getCategoryNews(category: savedInterest[random])
+            getSecondRandomCategoryNews(category: savedInterest[random2])
+         
             
-            searchedList = GetCategoryNews.getCategoryNews(category: savedInterest[random])
-            print("data \(savedInterest[random]) hakkında yazıların getirilmesi gerekiyor...")
         }
         
         backgroundCleaner()
         CollectionViewsLayout()        
-        newsList = getPopularNewsResponse.getPopularNews()
-//        searchedList = GetSearchedNews.getSearchedNews(searchedText: "apple")
-        yesterdayList = GetYesterdayNews.getYesterdayNews()
-//      GetSearchedNews.getSearchedNews(searchedText: "tesla")
         
-        
-        
-        // Do any additional setup after loading the view.
     }
+    
+    
+    func getCategoryNews(category: String ) {
+        
+        GetCategoryNews().getCategoryNews(category: category) {[weak self] (categoryNews) in
+            if let categoryNews = categoryNews {
+                self?.searchedList = categoryNews
+                DispatchQueue.main.async {
+                    
+                    self?.interestCollectionView.reloadData()
+                }
+            }
+        }
+        
+    }
+
+    func getSecondRandomCategoryNews(category: String ) {
+        
+        GetCategoryNews().getCategoryNews(category: category) {[weak self] (categoryNews) in
+            if let categoryNews = categoryNews {
+                self?.yesterdayList = categoryNews
+                DispatchQueue.main.async {
+                   
+                    self?.yesterdayCollectionView.reloadData()
+                }
+            }
+        }
+    }
+    
+    
+    func getPopularNews() {
+        
+        GetPopularNews().getPopularNews() {[weak self] (popularNews) in
+            if let popularNews = popularNews {
+                self?.newsList = popularNews
+                DispatchQueue.main.async {
+                    print("")
+                    self?.popularCollectionView.reloadData()
+                }
+            }
+        }
+        
+    }
+    
     
     @IBAction func searchClicked(_ sender: Any) {
         tabBarController?.selectedIndex = 1
@@ -62,27 +117,24 @@ class FeedVC: UIViewController {
         detailCollectionView()
         yesterdayCollectionview()
     }
-    
-    
-
-    // fromYesterdayFeedtoDetail
+  
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // code
+       
         let index = sender as? Int
                
         if segue.identifier == "fromPopularFeedtoDetail" {
             
             let destinationVC = segue.destination as!  NewsDetailsVC
-            destinationVC.breakingNews = newsList![index!]
+            destinationVC.breakingNews = newsList[index!]
         } else  if segue.identifier == "fromInterestFeedtoDetail" {
             let destinationVC = segue.destination as!  NewsDetailsVC
-            destinationVC.breakingNews = searchedList![index!]
+            destinationVC.breakingNews = searchedList[index!]
         } else if segue.identifier == "fromYesterdayFeedtoDetail" {
             let destinationVC = segue.destination as!  NewsDetailsVC
-            destinationVC.breakingNews = yesterdayList![index!]
+            destinationVC.breakingNews = yesterdayList[index!]
         }
-        // fromInterestFeedtoDetail
+        
     }
     
 }
@@ -93,11 +145,21 @@ extension FeedVC : UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if collectionView == popularCollectionView {
-            return newsList!.count
-        } else if collectionView == interestCollectionView {
-            return 20
+            if newsList.count > 0 {
+              return  newsList.count
+            }
+            return 0
+        }
+        else if collectionView == interestCollectionView {
+            if searchedList.count > 0 {
+              return  12
+            }
+            return 0
         } else {
-            return 6
+            if yesterdayList.count > 0 {
+              return  6
+            }
+            return 0
         }
     }
     
@@ -105,7 +167,7 @@ extension FeedVC : UICollectionViewDelegate, UICollectionViewDataSource {
         if collectionView == popularCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "popularCell", for: indexPath) as! PopularCVC
             cell.backgroundColor = .clear
-            var news = newsList![indexPath.row]
+            let news = newsList[indexPath.row]
             cell.cellEdit(newsList: news) 
             return cell
             
@@ -113,7 +175,7 @@ extension FeedVC : UICollectionViewDelegate, UICollectionViewDataSource {
             
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "interestCell", for: indexPath) as! FeedInterestCVC
             cell.backgroundColor = .clear
-            var news = searchedList![indexPath.row]
+            let news = searchedList[indexPath.row]
             cell.cellEdit(newsList: news)
             return cell
             
@@ -121,7 +183,7 @@ extension FeedVC : UICollectionViewDelegate, UICollectionViewDataSource {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "yesterdayCell", for: indexPath) as! YesterdayCVC
             cell.backgroundColor = .clear
             
-            var news = yesterdayList![indexPath.row]
+            let news = yesterdayList[indexPath.row]
             cell.cellEdit(newsList: news)
             return cell
             

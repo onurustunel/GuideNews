@@ -10,16 +10,47 @@ import UIKit
 class SearchVC: UIViewController {
 
     @IBOutlet weak var searchTableView: UITableView!
-    var newsList : [BreakingNews]?
+    var newsList = [BreakingNews]()
+ 
+    
+    func getSearchedNews(searchedText : String) {
+        let request =  URL(string: "https://newsapi.org/v2/everything?q=\(searchedText)&sortBy=popularity&apiKey=\(Constant.APIKEY)")!
+       print(request)
+        GetSearchedNews().getSearchedNews(searchedText: searchedText) { (news) in
+            if let news = news {
+                self.newsList = news
+                DispatchQueue.main.async {
+                    self.searchTableView.reloadData()
+                }
+            }
+            }
+            
+    }
+    
+    func getPopularNews() {
+        
+        GetPopularNews().getPopularNews() {[weak self] (popularNews) in
+            if let popularNews = popularNews {
+                self?.newsList = popularNews
+                DispatchQueue.main.async {
+                    self?.searchTableView.reloadData()
+                }
+            }
+        }
+        
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         searchTableView.backgroundColor = .clear
         searchbar()
-        newsList = getPopularNewsResponse.getPopularNews()
-        self.hideKeyboardWhenTappedAround()
+        getPopularNews()
 
-        // Do any additional setup after loading the view.
+        self.hideKeyboardWhenTappedAround()
+ 
+        searchTableView.reloadData()
+       
     }
     
     
@@ -28,7 +59,7 @@ class SearchVC: UIViewController {
         if segue.identifier == "fromSearchtoDetail" {
             
             let destinationVC = segue.destination as!  NewsDetailsVC
-            destinationVC.breakingNews = newsList![index!]
+            destinationVC.breakingNews = newsList[index!]
         }
     }
     
@@ -38,11 +69,8 @@ class SearchVC: UIViewController {
 
 extension SearchVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if tableView == searchTableView {
-            return 20            
-        } else {
+        if newsList.count > 0 { return newsList.count  } else {
             return 0
-            
         }
         
     }
@@ -50,7 +78,7 @@ extension SearchVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell", for: indexPath) as! SearchTVC
         
-        let news = newsList![indexPath.row]
+        let news = newsList[indexPath.row]
         cell.cellEdit(newsList: news)        
         cell.backgroundColor = .clear
         return cell
@@ -64,38 +92,34 @@ extension SearchVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "fromSearchtoDetail", sender: indexPath.row)
     }
+     
     
 }
 
 extension SearchVC: UISearchBarDelegate {
     
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText == "" {
+            getPopularNews()
+            DispatchQueue.main.async {
+                self.searchTableView.reloadData()
+            }
+        }
+    }
+    
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
          let text = searchBar.searchTextField.text
-            print(text)
+          
         
-        newsList?.removeAll()
-        newsList = GetSearchedNews.getSearchedNews(searchedText: text ?? "")
-        DispatchQueue.main.async {
-            self.searchTableView.reloadData()
-        }
+        newsList.removeAll()
+        getSearchedNews(searchedText: text ?? "")
         
         view.endEditing(true)
         
     }
-    
-//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//        searchedWord = searchText
-//        if searchText == "" {
-//            childrenList =  companyList[0].children!
-//            companyTableView.reloadData()
-//
-//        } else {
-//            makeSearch(name: searchedWord)
-//            print(childrenList.count)
-//
-//        }
-// }
+ 
 
 }
 

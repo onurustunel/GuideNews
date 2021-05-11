@@ -16,6 +16,7 @@ class PopularCVC: UICollectionViewCell {
     
     func cellEdit(newsList : BreakingNews) {
         popularCellTitle.text = newsList.title
+        popularCellimage.AnimationFadein(startingAlpha: 0, duration: 3, curve: .curveLinear)
         
         if let url = URL(string: "\(newsList.urlToImage ?? "")"){
             DispatchQueue.global().async {

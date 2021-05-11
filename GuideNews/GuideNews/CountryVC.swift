@@ -19,21 +19,7 @@ class CountryVC: UIViewController {
         countryCollectionViewLayout()
         // Do any additional setup after loading the view.
     }
-    
-    func countryCollectionViewLayout() {
-        
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        self.countryCollectionView.collectionViewLayout = layout
-        self.countryCollectionView!.contentInset = UIEdgeInsets(top: 10, left: 5, bottom:10, right: 5)
-        
-        if let layout = self.countryCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            layout.minimumInteritemSpacing = 5
-            layout.minimumLineSpacing = 10
-            layout.itemSize = CGSize(width: self.view.frame.size.width - 10 , height: self.view.frame.size.width - 120)
-            layout.invalidateLayout()
-        }
-    }
+     
     
     func saveData() {
         savedCountryData.set(chosenCountryArray, forKey: "countryInfo")
@@ -51,7 +37,7 @@ extension CountryVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "countryCell", for: indexPath) as! CountryCVC
-//        var data = interestData[indexPath.row]
+ 
         let name = Constant.countryName[indexPath.row]
         cell.countryName.text = "\(name)"
         cell.countryImage.image =  UIImage(named: "\(name)")
@@ -68,5 +54,25 @@ extension CountryVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
     }
     
 
+    
+}
+
+
+extension CountryVC {
+    
+    func countryCollectionViewLayout() {
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        self.countryCollectionView.collectionViewLayout = layout
+        self.countryCollectionView!.contentInset = UIEdgeInsets(top: 10, left: 5, bottom:10, right: 5)
+        
+        if let layout = self.countryCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.minimumInteritemSpacing = 5
+            layout.minimumLineSpacing = 10
+            layout.itemSize = CGSize(width: self.view.frame.size.width - 10 , height: self.view.frame.size.width - 120)
+            layout.invalidateLayout()
+        }
+    }
     
 }

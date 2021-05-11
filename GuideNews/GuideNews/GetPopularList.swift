@@ -1,5 +1,5 @@
 //
-//  GetSearchedNewsMVVM.swift
+//  GetPopularListMVVM.swift
 //  GuideNews
 //
 //  Created by MacOS on 9.05.2021.
@@ -7,19 +7,22 @@
 
 import Foundation
 
-class GetSearchedNews {
+class GetPopularNews {
     
-    func getSearchedNews(searchedText: String, completion: @escaping ([BreakingNews]?) -> ()) {
-        let request = URLRequest(url: URL(string: "https://newsapi.org/v2/everything?q=\(searchedText)&sortBy=popularity&apiKey=\(Constant.APIKEY)")!,timeoutInterval: Double.infinity)
+    
+    func getPopularNews(completion: @escaping ([BreakingNews]?) -> ()) {
+        let chosenLanguage = Language.ChosenLanguage()
+        
+        let request = URLRequest(url: URL(string: "https://newsapi.org/v2/top-headlines?country=\(chosenLanguage)&apiKey=\(Constant.APIKEY)")!,timeoutInterval: Double.infinity)
         
         URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let httpResponse  = response as? HTTPURLResponse else {
+                return
+            }
             
             if let error = error {
                 print(error.localizedDescription)
                 completion(nil)
-            }
-            guard let httpResponse  = response as? HTTPURLResponse else {
-                return
             }
             
             if httpResponse.statusCode == 200 {
@@ -40,4 +43,9 @@ class GetSearchedNews {
     }
     
 }
+
+
+
+
+
 

@@ -16,6 +16,7 @@ class SearchTVC: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         // Initialization code
     }
 
@@ -24,24 +25,17 @@ class SearchTVC: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    /*
-     let publishedDate : Date = news.publishedAt as? Date ?? Date()
-     let dateFormatter = DateFormatter()
-     dateFormatter.dateFormat = "MMM/dd/yyyy"
-     newsDateLabel.text = dateFormatter.string(from: publishedDate)
-     
-     */
+
     
-    
-    func cellEdit(newsList : BreakingNews) {
+    func cellEdit(newsList : BreakingNews) { 
         searchCellTitle.text = newsList.title
+        
         // Date Formating
-        let publishedDate : Date = newsList.publishedAt as? Date ?? Date()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM/dd/yyyy"
-        searchCellSource.text = dateFormatter.string(from: publishedDate)
-                
-        if let url = URL(string: "\(newsList.urlToImage ?? "")"){
+        let date = "\(newsList.publishedAt?.prefix(10) ?? "")"
+        searchCellSource.text = Helper.changeDateFormat(dateString: date, fromFormat: "yyyy-MM-dd", toFormat: "dd/MM/yyyy")
+        
+        if let url = URL(string: "\(newsList.urlToImage ?? "")")
+        {
             DispatchQueue.global().async {
                 let data = try? Data(contentsOf: url)
                 

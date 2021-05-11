@@ -17,7 +17,7 @@ class CollectionViewFooter: UICollectionReusableView {
     var saveInterestProtocol:SaveInterestCollectionViewCellProtocol?
       
     private let button :UIButton = {
-        let button = UIButton(type: .system) // let preferred over var here
+        let button = UIButton(type: .system)  
         button.backgroundColor = #colorLiteral(red: 0.6078431373, green: 0.06274509804, blue: 0.01176470588, alpha: 1)
         button.setTitle(" Save ", for: .normal)
         button.titleLabel?.font = UIFont(name: "Times New Roman", size: 16)

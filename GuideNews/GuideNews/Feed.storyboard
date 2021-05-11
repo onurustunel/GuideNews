@@ -41,7 +41,7 @@
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="popularCell" id="XtB-TH-A3L" customClass="PopularCVC" customModule="GuideNews" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="3.5" width="321" height="353"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3Q1-e4-S6J">
+                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3Q1-e4-S6J" customClass="SpringView">
                                                             <rect key="frame" x="0.0" y="0.0" width="321" height="353"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
@@ -91,13 +91,13 @@
                                                 </connections>
                                             </collectionView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For You" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gD-LI-wYn">
-                                                <rect key="frame" x="24" y="386" width="109.5" height="35.5"/>
-                                                <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="32"/>
+                                                <rect key="frame" x="24" y="386" width="103" height="33.5"/>
+                                                <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="30"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="A3e-r2-ojT">
-                                                <rect key="frame" x="8" y="445.5" width="398" height="582"/>
+                                                <rect key="frame" x="8" y="443.5" width="398" height="582"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="582" id="y8u-Vp-O19"/>
@@ -228,8 +228,8 @@
                                                 </connections>
                                             </collectionView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yesterday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDN-Sn-TqB">
-                                                <rect key="frame" x="24" y="1051.5" width="152" height="40"/>
-                                                <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="36"/>
+                                                <rect key="frame" x="24" y="1049.5" width="127" height="33.5"/>
+                                                <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="30"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -283,8 +283,10 @@
                     </navigationItem>
                     <connections>
                         <outlet property="interestCollectionView" destination="A3e-r2-ojT" id="Png-Qu-PuJ"/>
+                        <outlet property="mainView" destination="QGP-T9-jS7" id="9Yu-wI-YHb"/>
                         <outlet property="popularCollectionView" destination="I15-Tt-4Dr" id="YWb-Vc-Fvz"/>
-                        <outlet property="specialCategories" destination="3gD-LI-wYn" id="Oxl-HT-n81"/>
+                        <outlet property="secondSpecialCategories" destination="aDN-Sn-TqB" id="cVd-Yi-Ngh"/>
+                        <outlet property="specialCategories" destination="3gD-LI-wYn" id="Pxs-qC-M64"/>
                         <outlet property="yesterdayCollectionView" destination="CSw-Gc-UBH" id="LLd-wj-dfc"/>
                         <segue destination="Teb-bD-Yo4" kind="show" identifier="fromPopularFeedtoDetail" id="LvJ-M5-aA6"/>
                         <segue destination="Teb-bD-Yo4" kind="show" identifier="fromInterestFeedtoDetail" id="zVd-hC-aSa"/>
@@ -367,7 +369,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vl0-6A-BFb"/>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="8VG-e0-zJI" secondAttribute="bottom" id="APZ-Ki-xnA"/>
                             <constraint firstItem="8VG-e0-zJI" firstAttribute="top" secondItem="o1A-MR-1VK" secondAttribute="top" id="Bsm-VE-x58"/>
@@ -408,7 +410,7 @@
                                 <real key="value" value="22"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="circleRadius">
-                                <real key="value" value="35"/>
+                                <real key="value" value="31"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </tabBar>
@@ -416,6 +418,7 @@
                         <segue destination="XKq-2w-nYM" kind="relationship" relationship="viewControllers" id="dT9-rK-gvb"/>
                         <segue destination="jmi-Te-5J5" kind="relationship" relationship="viewControllers" id="6Od-z8-mKU"/>
                         <segue destination="Zjo-d3-Ij4" kind="relationship" relationship="viewControllers" id="KOM-Kh-vyQ"/>
+                        <segue destination="TtD-kC-QGQ" kind="relationship" relationship="viewControllers" id="tuH-1D-qAC"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t8p-ir-3Ym" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -604,6 +607,101 @@
             </objects>
             <point key="canvasLocation" x="1502.8985507246377" y="1282.3660714285713"/>
         </scene>
+        <!--PersonalNews-->
+        <scene sceneID="lIl-GS-Sj0">
+            <objects>
+                <viewController title="PersonalNews" id="TtD-kC-QGQ" customClass="PersonalNews" customModule="GuideNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CeP-vq-NQA" customClass="BackgroundGradientView" customModule="GuideNews" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3Hn-Zp-LS3">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="personalNewsCell" rowHeight="159" id="Zek-DF-104" customClass="PersonalNewsTVC" customModule="GuideNews" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="159"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Zek-DF-104" id="E0w-wE-lQz">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="159"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dKn-co-Kgj">
+                                                    <rect key="frame" x="32" y="23" width="120" height="120"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="120" id="EqU-4c-x2P"/>
+                                                        <constraint firstAttribute="width" constant="120" id="JHB-Vd-m80"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
+                                                            <integer key="value" value="12"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="asdadas asd ad ads ada da asdsdadasd asdasd asd ada da ad adad" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ld6-zY-xql">
+                                                    <rect key="frame" x="172" y="23" width="230" height="80"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="80" id="XbG-YC-VBc"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="20"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Source : adadadadada.com" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TW9-3b-emd">
+                                                    <rect key="frame" x="176" y="126" width="226" height="17"/>
+                                                    <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="15"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="TW9-3b-emd" secondAttribute="trailing" constant="12" id="2Fg-nO-vjZ"/>
+                                                <constraint firstItem="ld6-zY-xql" firstAttribute="leading" secondItem="dKn-co-Kgj" secondAttribute="trailing" constant="20" id="6iN-wd-aJK"/>
+                                                <constraint firstAttribute="bottom" secondItem="TW9-3b-emd" secondAttribute="bottom" constant="16" id="H2i-hm-WdY"/>
+                                                <constraint firstItem="TW9-3b-emd" firstAttribute="leading" secondItem="dKn-co-Kgj" secondAttribute="trailing" constant="24" id="VmA-CJ-TZk"/>
+                                                <constraint firstItem="ld6-zY-xql" firstAttribute="top" secondItem="E0w-wE-lQz" secondAttribute="top" constant="23" id="qcf-AU-Omq"/>
+                                                <constraint firstItem="dKn-co-Kgj" firstAttribute="top" secondItem="E0w-wE-lQz" secondAttribute="topMargin" constant="12" id="tNH-dM-tQr"/>
+                                                <constraint firstItem="dKn-co-Kgj" firstAttribute="leading" secondItem="E0w-wE-lQz" secondAttribute="leadingMargin" constant="12" id="wce-kY-JV9"/>
+                                                <constraint firstAttribute="trailing" secondItem="ld6-zY-xql" secondAttribute="trailing" constant="12" id="zai-Aw-qEY"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="personalNewsDate" destination="TW9-3b-emd" id="lWx-Zp-Is2"/>
+                                            <outlet property="personalNewsImage" destination="dKn-co-Kgj" id="ghu-Dl-4Pu"/>
+                                            <outlet property="personalNewsTitle" destination="ld6-zY-xql" id="oXp-iA-FNP"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="TtD-kC-QGQ" id="lJe-WY-lQY"/>
+                                    <outlet property="delegate" destination="TtD-kC-QGQ" id="llV-No-1d8"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ggH-cR-ZCp"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3Hn-Zp-LS3" firstAttribute="trailing" secondItem="ggH-cR-ZCp" secondAttribute="trailing" id="CEa-oH-S8O"/>
+                            <constraint firstItem="3Hn-Zp-LS3" firstAttribute="leading" secondItem="ggH-cR-ZCp" secondAttribute="leading" id="Heq-dT-8ec"/>
+                            <constraint firstItem="3Hn-Zp-LS3" firstAttribute="top" secondItem="CeP-vq-NQA" secondAttribute="top" id="K2i-Y8-hJa"/>
+                            <constraint firstAttribute="bottom" secondItem="3Hn-Zp-LS3" secondAttribute="bottom" id="t47-TO-cqF"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" id="Z9f-WY-wbB">
+                        <imageReference key="image" image="person" symbolScale="large"/>
+                        <imageReference key="selectedImage" image="person" symbolScale="large"/>
+                    </tabBarItem>
+                    <connections>
+                        <outlet property="personalNewsTableView" destination="3Hn-Zp-LS3" id="IJL-AT-QvB"/>
+                        <segue destination="Teb-bD-Yo4" kind="show" identifier="fromPersonalNewstoDetail" id="c2H-0K-O9J"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dom-8q-6en" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1507" y="2057"/>
+        </scene>
         <!--News DetailsVC-->
         <scene sceneID="qiN-GE-1O4">
             <objects>
@@ -612,7 +710,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Obama Foundation drawn high dollar: International donations" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rwP-Fa-c3E">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Obama Foundation drawn high dollar: International donations" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="rwP-Fa-c3E">
                                 <rect key="frame" x="20" y="120" width="374" height="93.5"/>
                                 <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -809,12 +907,13 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="nln-0C-Dm1"/>
+        <segue reference="LvJ-M5-aA6"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="category" width="32" height="32"/>
         <image name="cinema" width="433" height="433"/>
         <image name="home-filled" width="32" height="32"/>
+        <image name="person" width="40" height="40"/>
         <image name="search-filled" width="32" height="32"/>
         <image name="search-filled_smaller" width="38" height="39"/>
         <image name="square.and.arrow.up.fill" catalog="system" width="115" height="128"/>
@@ -829,6 +928,9 @@
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

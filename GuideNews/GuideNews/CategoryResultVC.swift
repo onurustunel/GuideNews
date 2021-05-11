@@ -12,8 +12,6 @@ class CategoryResultVC: UIViewController {
     @IBOutlet weak var categoryResultTableView: UITableView!
     var chosenCategory = ""
     var categoryNews : [BreakingNews]?
-    var filteredNews : [BreakingNews]?
-    var allNews : [BreakingNews]?
     var searchedWord = ""
     
     
@@ -21,13 +19,25 @@ class CategoryResultVC: UIViewController {
         super.viewDidLoad()
         categoryResultTableView.backgroundColor = .clear
         searchbar()
-        self.categoryNews = GetCategoryNews.getCategoryNews(category: self.chosenCategory)
+        getCategoryNews(category: self.chosenCategory)
         navigationItem.title = chosenCategory
-        allNews = categoryNews
+     
         self.hideKeyboardWhenTappedAround() 
         
-       
-        // Do any additional setup after loading the view.
+    }
+    
+    func getCategoryNews(category: String ) {
+        
+        GetCategoryNews().getCategoryNews(category: category) {[weak self] (categoryNews) in
+            if let categoryNews = categoryNews {
+                self?.categoryNews = categoryNews
+                DispatchQueue.main.async {
+                    
+                    self?.categoryResultTableView.reloadData()
+                }
+            }
+        }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -38,16 +48,16 @@ class CategoryResultVC: UIViewController {
             destinationVC.breakingNews = categoryNews![index!]
         }
     }
+    
     func makeSearch(name: String) {
-        var filteredList = categoryNews!.filter({$0.title!.lowercased().contains(name.lowercased())})
+        let filteredList = categoryNews!.filter({$0.title!.lowercased().contains(name.lowercased())})
         categoryNews = filteredList
         
         DispatchQueue.main.async {
             self.categoryResultTableView.reloadData()
         }
     }
-    
-    
+     
 }
 
 
@@ -83,7 +93,7 @@ extension CategoryResultVC: UISearchBarDelegate {
     
         searchedWord = searchText
         if searchText == "" {
-            categoryNews =  allNews
+            getCategoryNews(category: self.chosenCategory)
             categoryResultTableView.reloadData()
             
         } else {
