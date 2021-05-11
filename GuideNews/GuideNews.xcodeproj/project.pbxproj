@@ -190,7 +190,7 @@
 				22CD4726260C74F400478697 /* Service */,
 				22CD4725260C74E900478697 /* Controller */,
 				22CD4724260C74E100478697 /* View */,
-				22CD4723260C74DB00478697 /* Modal */,
+				22CD4723260C74DB00478697 /* Model */,
 				22CD4722260C74CD00478697 /* Delegates */,
 				22CD46F2260C749F00478697 /* Assets.xcassets */,
 				22CD46F4260C749F00478697 /* LaunchScreen.storyboard */,
@@ -223,10 +223,10 @@
 				22CD46E9260C749F00478697 /* AppDelegate.swift */,
 				22CD46EB260C749F00478697 /* SceneDelegate.swift */,
 			);
-			name = Delegates;
+			path = Delegates;
 			sourceTree = "<group>";
 		};
-		22CD4723260C74DB00478697 /* Modal */ = {
+		22CD4723260C74DB00478697 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				22CD4768260CA30100478697 /* InterestStruct.swift */,
@@ -234,7 +234,7 @@
 				222763B22611A15D00CFD42E /* BreakingNews.swift */,
 				22D321FF2626C837005660CD /* UserDefaultLanguage.swift */,
 			);
-			name = Modal;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		22CD4724260C74E100478697 /* View */ = {
@@ -252,7 +252,7 @@
 				224BAD3E26238965008C9026 /* CountryCVC.swift */,
 				2262AD2D264412AF00A73270 /* PersonalNewsTVC.swift */,
 			);
-			name = View;
+			path = View;
 			sourceTree = "<group>";
 		};
 		22CD4725260C74E900478697 /* Controller */ = {
@@ -269,7 +269,7 @@
 				224BAD392623883A008C9026 /* CountryVC.swift */,
 				2262AD28264411F200A73270 /* PersonalNews.swift */,
 			);
-			name = Controller;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		22CD4726260C74F400478697 /* Service */ = {
@@ -280,7 +280,7 @@
 				2256689E2648422C0081C7BC /* GetPopularList.swift */,
 				225668AB264852580081C7BC /* GetCategoryNews.swift */,
 			);
-			name = Service;
+			path = Service;
 			sourceTree = "<group>";
 		};
 		22CD4727260C750000478697 /* Utils */ = {
@@ -291,7 +291,7 @@
 				22214D2726130106001AEA81 /* DateFormatting.swift */,
 				226F2D852642F14200371520 /* Animations.swift */,
 			);
-			name = Utils;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		22CD472C260C752700478697 /* Storyboards */ = {
